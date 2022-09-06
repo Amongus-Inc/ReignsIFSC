@@ -49,5 +49,8 @@ else:
     binario = binario + "0"
 
 
+
+
+
 print (numero)
 print (binario)
