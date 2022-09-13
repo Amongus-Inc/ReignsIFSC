@@ -2,7 +2,8 @@ from os import getenv
 from dotenv import load_dotenv
 import discord
 load_dotenv()
-
+import random
+lista = ["melancia com mel", "the rock cocaina", "peitinhos falaciosos", "eita como eu to de boa", "eu falo tudo que penso"]
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -15,7 +16,9 @@ class MyClient(discord.Client):
             return
 
         if message.content.startswith('!juca'):
-            await message.reply('melancia com mel', mention_author=True)
+            await message.reply(random.choice(lista), mention_author=True)
+
+
 
 
 intents = discord.Intents.default()
