@@ -1,23 +1,27 @@
-numero = 120
+import random
 
-if (numero - 128) >= 0:
-    bit1 = 1
-    numero = numero - 128
-else 
-    bit1 = 0
-
-if (numero - 64) >= 0:
-    bit2 = 1
-    numero = numero - 64
-else 
-    bit2 = 0
-
-if (numero - 32) >= 0:
-    bit3 = 1
-    numero = numero - 32
-else 
-    bit3 = 0
+sanidade = 50
+popularidade = 50
+notas = 50
+inteligência = 50
 
 
-print (numero)
-print (bit1)(bit2)(bit3)
+print('Você quer participar da aula do Carlyle?')
+
+resposta = input("Sua descisão: ")
+# se lembrar de fazer o bagulho pra ele reconhecer letra maiuscula
+while sanidade > 0:
+    if resposta.startswith('sim'):
+        sanidade = sanidade -7
+    elif resposta.startswith('nao'):
+        sanidade = sanidade +18
+    else:
+        print('digita direito capeta')
+        #resolver isso depois
+
+
+
+print('Sanidade: ' + str(sanidade))
+print('Popularidade: ' + str(popularidade))
+print('Notas: ' + str(notas))
+print('Inteligência: ' + str(inteligência))
