@@ -10,13 +10,14 @@ senarios = ['N1', 'N2', 'N3']
 
 #if mensagem do discord for iniciar o bagulho começa
 while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 and popularidade >= 0 and popularidade <= 100 and popularidade != 0 and popularidade != 100 and notas >= 0 and notas <= 100 and notas != 0 and notas != 100 and inteligência >= 0 and inteligência <= 100 and inteligência != 0 and inteligência != 100:
+        print ('Novo cenário: ')
         sorteio = random.choice(senarios)
         if sorteio == 'N1':
                 print('Você quer participar da aula do Carlyle?')
                 while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 and popularidade >= 0 and popularidade <= 100 and popularidade != 0 and popularidade != 100 and notas >= 0 and notas <= 100 and notas != 0 and notas != 100 and inteligência >= 0 and inteligência <= 100 and inteligência != 0 and inteligência != 100:
                         resposta = input("Sua descisão: ")
                         if resposta.startswith('sim'):
-                                sanidade = sanidade - 10
+                                sanidade = sanidade - 45
                                 popularidade = popularidade
                                 notas = notas
                                 inteligência = inteligência
@@ -27,7 +28,7 @@ while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 an
                                 senarios.append('S1')
                                 break
                         elif resposta.startswith('nao'):
-                                sanidade = sanidade + 20
+                                sanidade = sanidade + 45
                                 popularidade = popularidade
                                 notas = notas
                                 inteligência = inteligência
@@ -35,6 +36,8 @@ while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 an
                                 print('Popularidade: ' + str(popularidade))
                                 print('Notas: ' + str(notas))
                                 print('Inteligência: ' + str(inteligência))
+                                if 'S1' in senarios:
+                                        senarios.remove('S1')
                                 break
                         else:
                                 print('digita direito capeta')
@@ -48,8 +51,8 @@ while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 an
                 while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 and popularidade >= 0 and popularidade <= 100 and popularidade != 0 and popularidade != 100 and notas >= 0 and notas <= 100 and notas != 0 and notas != 100 and inteligência >= 0 and inteligência <= 100 and inteligência != 0 and inteligência != 100:
                         resposta = input("Sua descisão: ")
                         if resposta.startswith('sim'):
-                                sanidade = sanidade
-                                popularidade = popularidade -20
+                                sanidade = sanidade - 45
+                                popularidade = popularidade 
                                 notas = notas
                                 inteligência = inteligência
                                 print('Sanidade: ' + str(sanidade))
@@ -59,15 +62,16 @@ while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 an
                                 senarios.append('S1')
                                 break
                         elif resposta.startswith('nao'):
-                                sanidade = sanidade
-                                popularidade = popularidade + 20
+                                sanidade = sanidade + 45
+                                popularidade = popularidade
                                 notas = notas
                                 inteligência = inteligência
                                 print('Sanidade: ' + str(sanidade))
                                 print('Popularidade: ' + str(popularidade))
                                 print('Notas: ' + str(notas))
                                 print('Inteligência: ' + str(inteligência))
-                                senarios.remove('S1')
+                                if 'S1' in senarios:
+                                        senarios.remove('S1')
                                 break
                         else:
                                 print('digita direito capeta')
@@ -80,9 +84,9 @@ while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 an
                 while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 and popularidade >= 0 and popularidade <= 100 and popularidade != 0 and popularidade != 100 and notas >= 0 and notas <= 100 and notas != 0 and notas != 100 and inteligência >= 0 and inteligência <= 100 and inteligência != 0 and inteligência != 100:
                         resposta = input("Sua descisão: ")
                         if resposta.startswith('sim'):
-                                sanidade = sanidade
+                                sanidade = sanidade - 45
                                 popularidade = popularidade
-                                notas = notas + 20
+                                notas = notas
                                 inteligência = inteligência
                                 print('Sanidade: ' + str(sanidade))
                                 print('Popularidade: ' + str(popularidade))
@@ -91,15 +95,16 @@ while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 an
                                 senarios.append('S1')
                                 break
                         elif resposta.startswith('nao'):
-                                sanidade = sanidade
+                                sanidade = sanidade + 45
                                 popularidade = popularidade
-                                notas = notas + 20
+                                notas = notas
                                 inteligência = inteligência
                                 print('Sanidade: ' + str(sanidade))
                                 print('Popularidade: ' + str(popularidade))
                                 print('Notas: ' + str(notas))
                                 print('Inteligência: ' + str(inteligência))
-                                senarios.remove('S1')
+                                if 'S1' in senarios:
+                                        senarios.remove('S1')
                                 break
                         else:
                                 print('digita direito capeta')
@@ -112,9 +117,9 @@ while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 an
                 while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 and popularidade >= 0 and popularidade <= 100 and popularidade != 0 and popularidade != 100 and notas >= 0 and notas <= 100 and notas != 0 and notas != 100 and inteligência >= 0 and inteligência <= 100 and inteligência != 0 and inteligência != 100:
                         resposta = input("Sua descisão: ")
                         if resposta.startswith('sim'):
-                                sanidade = sanidade
+                                sanidade = sanidade - 45
                                 popularidade = popularidade
-                                notas = notas + 20
+                                notas = notas
                                 inteligência = inteligência
                                 print('Sanidade: ' + str(sanidade))
                                 print('Popularidade: ' + str(popularidade))
@@ -123,15 +128,16 @@ while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 an
                                 senarios.append('S1')
                                 break
                         elif resposta.startswith('nao'):
-                                sanidade = sanidade
+                                sanidade = sanidade + 45
                                 popularidade = popularidade
-                                notas = notas + 20
+                                notas = notas
                                 inteligência = inteligência
                                 print('Sanidade: ' + str(sanidade))
                                 print('Popularidade: ' + str(popularidade))
                                 print('Notas: ' + str(notas))
                                 print('Inteligência: ' + str(inteligência))
-                                senarios.remove('S1')
+                                if 'S1' in senarios:
+                                        senarios.remove('S1')
                                 break
                         else:
                                 print('digita direito capeta')
