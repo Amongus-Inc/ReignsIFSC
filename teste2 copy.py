@@ -1,5 +1,7 @@
 import random
 
+#pesquisar sobre python dicionarios
+
 sanidade = 50
 popularidade = 50
 notas = 50
@@ -7,6 +9,11 @@ inteligência = 50
 
 senarios = ['N1', 'N2', 'N3']
 #senario com s, é porque eu quero
+#glosario 
+#N = normal
+#S = special
+#H = historia (faça questão de ordenar esses cenarios na sua ordem que devem acontecer)
+#adicione letras especificas para cenarios que serão adicionados a lista
 
 #if mensagem do discord for iniciar o bagulho começa
 while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 and popularidade >= 0 and popularidade <= 100 and popularidade != 0 and popularidade != 100 and notas >= 0 and notas <= 100 and notas != 0 and notas != 100 and inteligência >= 0 and inteligência <= 100 and inteligência != 0 and inteligência != 100:
@@ -145,7 +152,6 @@ while sanidade >= 0 and sanidade <= 100 and sanidade != 0 and sanidade != 100 an
                                 print('Popularidade: ' + str(popularidade))
                                 print('Notas: ' + str(notas))
                                 print('Inteligência: ' + str(inteligência))
-
 
 
 print ('perdeu otario')
