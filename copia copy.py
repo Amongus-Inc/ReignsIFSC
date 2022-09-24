@@ -9,12 +9,25 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(intents=intents, command_prefix='')
 
+
+
 # Dicionário com as definições da máquina de estados do jogo.
 estados = {
     0: {
-        'frases': ['Digite "iniciar" para começar o jogo.'],
+        'frases': ['Ricardito quer parte do teu lanche, você dá?'],
+        'frases_positivas': ['isso não é muito legal'],
+        'frases_negativas': ['descisão certa, ganha respeito'],
+        'positivos_sanidade': -30, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 30, 
+        'negativos_popularidade': 0,
+        'nagativos_notas': 0,
+        'negativos_inteligência': 0,
         'proximos_estados': {
-            'iniciar': 1
+            'sim': 1,
+            'nao': 2
         }
     },
     1: {
@@ -38,7 +51,7 @@ estados = {
 
 # Dicionário com os estados correntes de cada jogador.
 estados_dos_jogadores = {}
-
+status_dos_jogadores = {}
 
 @bot.event
 async def on_ready():
@@ -55,6 +68,13 @@ async def on_message(msg):
     # o que significa que precisa colocá-lo no estado zero (0).
     if msg.author.id not in estados_dos_jogadores:
         estados_dos_jogadores[msg.author.id] = 0
+        status_dos_jogadores[msg.author.id] = {
+            'sanidade': 50,
+            'popularidade': 50,
+            'notas': 50,
+            'inteligência': 50
+        }
+
 
     # Em ordem de operação:
     # 0) Obter o ID do jogador:
@@ -69,7 +89,41 @@ async def on_message(msg):
     #    estados[estados_dos_jogadores[msg.author.id]]['proximos_estados'].keys()
     # 5) Verificar se a frase do usuário está na lista de chaves (frases) do estado:
     if msg.content in estados[estados_dos_jogadores[msg.author.id]]['proximos_estados'].keys():
-        #
+        await msg.channel.send(choice(estados[estados_dos_jogadores[msg.author.id]]['frases_positivas']))
+        
+        await msg.channel.send(estados_dos_jogadores)
+        await msg.channel.send(status_dos_jogadores)
+        
+        
+        
+        
+        sanidade = sanidade + str(estados[estados_dos_jogadores[msg.author.id]]['positivos_sanidade'])
+        popularidade = popularidade + str(estados[estados_dos_jogadores['estado'][msg.author.id]]['positivos_popularidade'])
+        notas = notas + str(estados[estados_dos_jogadores[msg.author.id]]['positivos_notas'])
+        inteligência = inteligência + str(estados[estados_dos_jogadores[msg.author.id]]['positivos_inteligência'])
+        
+        
+        
+        await msg.channel.send('Sanidade: ' + str(estados_dos_jogadores[msg.author.id]))
+        await msg.channel.send('Popularidade: ' + estados_dos_jogadores[msg.author.id])
+        await msg.channel.send('Notas: ' + str(notas))
+        await msg.channel.send('Inteligência: ' + str(inteligência))
+
+
+
+        sanidade = sanidade + str(estados[estados_dos_jogadores[msg.author.id]]['positivos_sanidade'])
+        popularidade = popularidade + str(estados[estados_dos_jogadores['estado'][msg.author.id]]['positivos_popularidade'])
+        notas = notas + str(estados[estados_dos_jogadores[msg.author.id]]['positivos_notas'])
+        inteligência = inteligência + str(estados[estados_dos_jogadores[msg.author.id]]['positivos_inteligência'])
+        await msg.channel.send('Sanidade: ' + str(sanidade))
+        await msg.channel.send('Popularidade: ' + str(popularidade))
+        await msg.channel.send('Notas: ' + str(notas))
+        await msg.channel.send('Inteligência: ' + str(inteligência))
+
+
+
+
+
         # 6) Atualizar o estado do jogador, fazendo-o avançar no jogo:
         estados_dos_jogadores[msg.author.id] = estados[estados_dos_jogadores[msg.author.id]]['proximos_estados'][msg.content]
         #
