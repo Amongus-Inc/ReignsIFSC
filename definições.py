@@ -6,12 +6,12 @@ estados = {
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
         'positivos_sanidade': -30, 
-        'positivos_popularidade': 0,
+        'positivos_popularidade': 20,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
         'negativos_sanidade': 30, 
         'negativos_popularidade': 0,
-        'nagativos_notas': 0,
+        'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '[sS](i)+m': 7},
@@ -30,7 +30,7 @@ estados = {
         'positivos_inteligência': 0,
         'negativos_sanidade': 30, 
         'negativos_popularidade': 0,
-        'nagativos_notas': 0,
+        'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '[sS](i)+m': 7},
@@ -49,7 +49,7 @@ estados = {
         'positivos_inteligência': 0,
         'negativos_sanidade': 30, 
         'negativos_popularidade': 0,
-        'nagativos_notas': 0,
+        'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '[sS](i)+m': 7},
@@ -68,7 +68,7 @@ estados = {
         'positivos_inteligência': 0,
         'negativos_sanidade': 30, 
         'negativos_popularidade': 0,
-        'nagativos_notas': 0,
+        'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '[sS](i)+m': 7},
@@ -88,7 +88,7 @@ estados = {
         'positivos_inteligência': 0,
         'negativos_sanidade': 30, 
         'negativos_popularidade': 0,
-        'nagativos_notas': 0,
+        'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '[sS](i)+m': 7},
@@ -108,7 +108,7 @@ estados = {
         'positivos_inteligência': 0,
         'negativos_sanidade': 30, 
         'negativos_popularidade': 0,
-        'nagativos_notas': 0,
+        'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '[sS](i)+m': 7},
@@ -127,7 +127,7 @@ estados = {
         'positivos_inteligência': 0,
         'negativos_sanidade': 30, 
         'negativos_popularidade': 0,
-        'nagativos_notas': 0,
+        'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '[sS](i)+m': 7},
@@ -146,7 +146,7 @@ estados = {
         'positivos_inteligência': 0,
         'negativos_sanidade': 30, 
         'negativos_popularidade': 0,
-        'nagativos_notas': 0,
+        'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '[sS](i)+m': 7},
@@ -165,7 +165,7 @@ estados = {
         'positivos_inteligência': 0,
         'negativos_sanidade': 30, 
         'negativos_popularidade': 0,
-        'nagativos_notas': 0,
+        'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '[sS](i)+m': 7},

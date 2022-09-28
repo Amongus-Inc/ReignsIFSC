@@ -45,11 +45,16 @@ async def on_message(msg):
         if fullmatch(key, msg.content):
             
             await msg.channel.send(estado_do_jogador['frases_positivas'])
-            status_sanidade = status_sanidade + estado_do_jogador['positivos_sanidade']
+
+            status_sanidade = status_sanidade + int(estado_do_jogador['positivos_sanidade'])
+            #fazer passo a passo para o professor e perguntar porque ele não tá mudando
+            status_popularidade = status_popularidade + int(estado_do_jogador['positivos_popularidade'])
+            status_notas = status_notas + int(estado_do_jogador['positivos_notas'])
+            status_inteligencia = status_inteligencia + int(estado_do_jogador['positivos_inteligência'])
 
             await msg.channel.send(status_dos_jogadores[autor])
             partidas[autor] = value
-            if estados[partidas[autor]]['2_estapas'] == 1:
+            if estados[partidas[autor]]['2_estapas'] == 1: #usar um diferente de 0 aqui para ser mais facil
                 estado_do_jogador = estados[partidas[autor]]
             else:
                 partidas[autor] = random.randint(0, 3)
