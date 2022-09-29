@@ -14,11 +14,11 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '[sS](i)+m': 7},
+            '[sS](i)+m': 0},
         'negativa_proximos_estados': {
             '[nN][aã]+o': 2
         },
-        '2_estapas': 0
+        '2_estapas': 0                 #0 = igual a cenario duplo ou maior/1 = aleatorio
     },
     1: {
         'frases': ['estado1'],
@@ -180,7 +180,8 @@ estados = {
 partidas = {}
 status_dos_jogadores = {}
 
-
-#cenarios mormais 0-1023
+#reservar 0-15 para derrotas
+#reservar 16-31 (quanto prescisar)
+#cenarios mormais 32-1023
 #cenarios de continuação 1024-2047
 #cenarios historias 2048-3000
