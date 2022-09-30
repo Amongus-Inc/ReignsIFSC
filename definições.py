@@ -146,7 +146,7 @@ estados = {
         }             
     },
     8: {
-        'frases': ['estado8'],
+        'frases': ['Ricardito quer se lanche você dá?'],
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
         'positivos_sanidade': -30, 
@@ -165,7 +165,7 @@ estados = {
         
     },
     9: {
-        'frases': ['estado9'],
+        'frases': ['Você quer participar da aula do Carlyle?'],
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
         'positivos_sanidade': -30, 

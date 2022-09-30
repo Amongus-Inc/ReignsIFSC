@@ -4,7 +4,7 @@ mantenha a lista sempre na mesma ordem e mesmo com erros corrigidos deixe eles e
 - X 1 Senarios não sendo escolhidos
 - X 2 Problema de loop em caso de mensagem errada
 - X 3 Loops muito complexos
-- 4 Fazer o codigo interagir com o discord
-- X 5 Tirar senarios das chances
+- X 4 Fazer o codigo interagir com o discord
+- 5 Tirar senarios das chances
 - 6 Adicionar os senarios somente se eles não estão na lista
-- 7
+- 7 melhorar o sistema de lista e aleatoriedade
