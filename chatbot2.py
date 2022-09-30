@@ -52,12 +52,17 @@ async def on_message(msg):
             status_dos_jogadores[autor]['Inteligência'] = status_inteligencia + int(estado_do_jogador['positivos_inteligência'])
 
             await msg.channel.send(status_dos_jogadores[autor])
-            partidas[autor] = value
-            if estados[partidas[autor]]['2_estapas'] == 0: #usar um diferente de 0 aqui para ser mais facil
+            
+            if value != 8000: #usar um diferente de 0 aqui para ser mais facil
+                partidas[autor] = value
                 estado_do_jogador = estados[partidas[autor]]
             else:
-                partidas[autor] = random.randint(0, 3)
-                flip = random.randint(16, 17)#fazer ficar 1 à 25
+                estado_anterior = partidas[autor]
+                moeda = estado_anterior
+                while estado_anterior == moeda:
+                    moeda = random.randint(0, 1)
+                partidas[autor] = moeda
+                flip = random.randint(15, 16)#fazer ficar 1 à 25
                 if flip == 17:
                     partidas[autor] = random.randint(2048, 2051)
             estado_do_jogador = estados[partidas[autor]]
@@ -75,12 +80,17 @@ async def on_message(msg):
             status_dos_jogadores[autor]['Inteligência'] = status_inteligencia + int(estado_do_jogador['negativos_inteligência'])
 
             await msg.channel.send(status_dos_jogadores[autor])
-            partidas[autor] = value
-            if estados[partidas[autor]]['2_estapas'] == 0: #usar um diferente de 0 aqui para ser mais facil
+            
+            if value != 8000: #usar um diferente de 0 aqui para ser mais facil
+                partidas[autor] = value
                 estado_do_jogador = estados[partidas[autor]]
             else:
-                partidas[autor] = random.randint(0, 3)
-                flip = random.randint(16, 17)#fazer ficar 1 à 25
+                estado_anterior = partidas[autor]
+                moeda = estado_anterior
+                while estado_anterior == moeda:
+                    moeda = random.randint(0, 1)
+                partidas[autor] = moeda
+                flip = random.randint(15, 16)#fazer ficar 1 à 25
                 if flip == 17:
                     partidas[autor] = random.randint(2048, 2051)
             estado_do_jogador = estados[partidas[autor]]

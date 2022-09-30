@@ -14,11 +14,10 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '[sS](i)+m': 0},
+            '\$[sS](i)+m': 8000},               #usar 8000 para o proximo cenario ser aleatorio
         'negativa_proximos_estados': {
-            '[nN][aã]+o': 2
-        },
-        '2_estapas': 0                 #0 = igual a cenario duplo ou maior/1 = aleatorio
+            '\$[nN][aã]+o': 7
+        }             
     },
     1: {
         'frases': ['estado1'],
@@ -33,11 +32,10 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '[sS](i)+m': 7},
+            '\$[sS](i)+m': 8000},
         'negativa_proximos_estados': {
-            '[nN][aã]+o': 2
-        },
-        '2_estapas': 0
+            '\$[nN][aã]+o': 2
+        }
     },
     2: {
         'frases': ['estado2'],
@@ -52,11 +50,10 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '[sS](i)+m': 7},
+            '\$[sS](i)+m': 8000},
         'negativa_proximos_estados': {
-            '[nN][aã]+o': 2
-        },
-        '2_estapas': 0
+            '\$[nN][aã]+o': 2
+        }
     },
     3: {
         'frases': ['estado3'],
@@ -71,11 +68,10 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '[sS](i)+m': 7},
+            '\$[sS](i)+m': 7},
         'negativa_proximos_estados': {
-            '[nN][aã]+o': 2
-        },
-        '2_estapas': 0
+            '\$[nN][aã]+o': 2
+        }
 
     },
     7: {
@@ -91,11 +87,10 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '[sS](i)+m': 7},
+            '\$[sS](i)+m': 7},
         'negativa_proximos_estados': {
-            '[nN][aã]+o': 2
-        },
-        '2_estapas': 0
+            '\$[nN][aã]+o': 2
+        }
         
     },
     2048: {
@@ -111,11 +106,10 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '[sS](i)+m': 7},
+            '\$[sS](i)+m': 7},
         'negativa_proximos_estados': {
-            '[nN][aã]+o': 2
-        },
-        '2_estapas': 0
+            '\$[nN][aã]+o': 2
+        }
     },
     2049: {
         'frases': ['estado2049'],
@@ -130,11 +124,10 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '[sS](i)+m': 7},
+            '\$[sS](i)+m': 7},
         'negativa_proximos_estados': {
-            '[nN][aã]+o': 2
-        },
-        '2_estapas': 0
+            '\$[nN][aã]+o': 2
+        }
     },    
     2050: {
         'frases': ['estado2050'],
@@ -149,11 +142,10 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '[sS](i)+m': 7},
+            '\$[sS](i)+m': 7},
         'negativa_proximos_estados': {
-            '[nN][aã]+o': 2
-        },
-        '2_estapas': 0
+            '\$[nN][aã]+o': 2
+        }
     },    
     2051: {
         'frases': ['estado2051'],
@@ -168,11 +160,10 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '[sS](i)+m': 7},
+            '\$[sS](i)+m': 7},
         'negativa_proximos_estados': {
-            '[nN][aã]+o': 2
-        },
-        '2_estapas': 0
+            '\$[nN][aã]+o': 2
+        }
     }
 }
 
@@ -185,3 +176,4 @@ status_dos_jogadores = {}
 #cenarios mormais 32-1023
 #cenarios de continuação 1024-2047
 #cenarios historias 2048-3000
+#fazer um dicionario com cada autor e uma lista dos cenarios que podem ser sorteados e também fazer o sistema de mortes
