@@ -1,4 +1,4 @@
-from definições import estados, partidas, status_dos_jogadores
+from definições import estados, partidas, status_dos_jogadores, cenarios_dos_jogadores
 import discord
 from discord.ext import commands
 from random import choice
@@ -29,6 +29,10 @@ async def on_message(msg):
             'Notas': 50,
             'Inteligência': 50
         }
+        cenarios_dos_jogadores[autor] = {
+            'cenarios': [8, 9, 10]
+        }
+
     estado_do_jogador = estados[partidas[autor]]
     status_sanidade = status_dos_jogadores[autor]['Sanidade']
     status_popularidade = status_dos_jogadores[autor]['Popularidade']
@@ -37,10 +41,20 @@ async def on_message(msg):
     for key, value in estado_do_jogador['positivo_proximos_estados'].items():
         if fullmatch(key, msg.content):            
             await msg.channel.send(estado_do_jogador['frases_positivas'])
+            senarios = cenarios_dos_jogadores[autor]['cenarios']
+            appender_positivo = estado_do_jogador['append_positivo']
+            remover_positivo = estado_do_jogador['remove_positivo']
+            if appender_positivo != 8000:
+                if appender_positivo not in senarios:
+                    senarios.append(appender_positivo)
+            if remover_positivo != 8000:
+                if remover_positivo in senarios:
+                    senarios.remove(remover_positivo)
+            cenarios_dos_jogadores[autor]['cenarios'] = senarios
             status_dos_jogadores[autor]['Sanidade'] = status_sanidade + int(estado_do_jogador['positivos_sanidade'])
             status_dos_jogadores[autor]['Popularidade'] = status_popularidade + int(estado_do_jogador['positivos_popularidade'])
             status_dos_jogadores[autor]['Notas'] = status_notas + int(estado_do_jogador['positivos_notas'])
-            status_dos_jogadores[autor]['Inteligência'] = status_inteligencia + int(estado_do_jogador['positivos_inteligência'])
+            status_dos_jogadores[autor]['Inteligência'] = status_inteligencia + int(estado_do_jogador['positivos_inteligência'])     
             if value != 8000:
                     partidas[autor] = value
                     estado_do_jogador = estados[partidas[autor]]
@@ -48,11 +62,8 @@ async def on_message(msg):
                 estado_anterior = partidas[autor]
                 moeda = estado_anterior
                 while estado_anterior == moeda:
-                    moeda = random.randint(8, 9)
-                partidas[autor] = moeda
-                flip = random.randint(15, 16)#fazer ficar 1 à 25
-                if flip == 17:
-                    partidas[autor] = random.randint(2048, 2051)            
+                    moeda = random.choice(senarios)
+                partidas[autor] = moeda         
             if status_dos_jogadores[autor]['Sanidade'] <= 0:
                 partidas[autor] = 0                
             elif status_dos_jogadores[autor]['Sanidade'] >= 100:
@@ -82,6 +93,16 @@ async def on_message(msg):
     for key, value in estado_do_jogador['negativa_proximos_estados'].items():
         if fullmatch(key, msg.content):            
             await msg.channel.send(estado_do_jogador['frases_negativas'])
+            senarios = cenarios_dos_jogadores[autor]['cenarios']
+            appender_negativo = estado_do_jogador['append_negativo']
+            remover_negativo = estado_do_jogador['remove_negativo']
+            if appender_negativo != 8000:
+                if appender_negativo not in senarios:
+                    senarios.append(appender_negativo)
+            if remover_negativo != 8000:
+                if remover_negativo in senarios:
+                    senarios.remove(remover_negativo)
+            cenarios_dos_jogadores[autor]['cenarios'] = senarios
             status_dos_jogadores[autor]['Sanidade'] = status_sanidade + int(estado_do_jogador['negativos_sanidade'])
             status_dos_jogadores[autor]['Popularidade'] = status_popularidade + int(estado_do_jogador['negativos_popularidade'])
             status_dos_jogadores[autor]['Notas'] = status_notas + int(estado_do_jogador['negativos_notas'])
@@ -93,11 +114,8 @@ async def on_message(msg):
                 estado_anterior = partidas[autor]
                 moeda = estado_anterior
                 while estado_anterior == moeda:
-                    moeda = random.randint(8, 9)
-                partidas[autor] = moeda
-                flip = random.randint(15, 16)#fazer ficar 1 à 25
-                if flip == 17:
-                    partidas[autor] = random.randint(2048, 2051)            
+                    moeda = random.choice(senarios)
+                partidas[autor] = moeda         
             if status_dos_jogadores[autor]['Sanidade'] <= 0:
                 partidas[autor] = 0                
             elif status_dos_jogadores[autor]['Sanidade'] >= 100:

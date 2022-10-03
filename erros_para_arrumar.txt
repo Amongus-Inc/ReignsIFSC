@@ -5,6 +5,7 @@ mantenha a lista sempre na mesma ordem e mesmo com erros corrigidos deixe eles e
 - X 2 Problema de loop em caso de mensagem errada
 - X 3 Loops muito complexos
 - X 4 Fazer o codigo interagir com o discord
-- 5 Tirar senarios das chances
-- 6 Adicionar os senarios somente se eles não estão na lista
-- 7 melhorar o sistema de lista e aleatoriedade
+- X 5 Tirar senarios das chances
+- X 6 Adicionar os senarios somente se eles não estão na lista
+- X 7 melhorar o sistema de lista e aleatoriedade
+- sistema de contagem de canarios sobrevividos/canerios passados
