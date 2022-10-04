@@ -29,7 +29,9 @@ async def on_message(msg):
             'Notas': 50,
             'Inteligência': 50
             },
-            'cenarios': [8, 9, 10]
+            'cenarios': [8, 9, 10],
+            'vividos': 0,
+            'recorde': 0
         }
 
     estado_do_jogador = estados[fatos[autor]['partida']]
@@ -53,11 +55,14 @@ async def on_message(msg):
             fatos[autor]['status']['Sanidade'] = status_sanidade + int(estado_do_jogador['positivos_sanidade'])
             fatos[autor]['status']['Popularidade'] = status_popularidade + int(estado_do_jogador['positivos_popularidade'])
             fatos[autor]['status']['Notas'] = status_notas + int(estado_do_jogador['positivos_notas'])
-            fatos[autor]['status']['Inteligência'] = status_inteligencia + int(estado_do_jogador['positivos_inteligência']) 
+            fatos[autor]['status']['Inteligência'] = status_inteligencia + int(estado_do_jogador['positivos_inteligência'])
             if value != 8000:
                     fatos[autor]['partida'] = value
             else:
+                fatos[autor]['vividos'] = fatos[autor]['vividos'] + 1
                 estado_anterior = fatos[autor]['partida']
+                if estado_anterior in range(0, 8):
+                    fatos[autor]['vividos'] = fatos[autor]['vividos'] - 1
                 moeda = estado_anterior
                 while estado_anterior == moeda:
                     moeda = random.choice(senarios)
@@ -78,11 +83,15 @@ async def on_message(msg):
                 fatos[autor]['partida'] = 6                
             elif fatos[autor]['status']['Inteligência'] >= 100:
                 fatos[autor]['partida'] = 7
-            if fatos[autor]['partida'] == 0 or fatos[autor]['partida'] == 1 or fatos[autor]['partida'] == 2 or fatos[autor]['partida'] == 3 or fatos[autor]['partida'] == 4 or fatos[autor]['partida'] == 5 or fatos[autor]['partida'] == 6 or fatos[autor]['partida'] == 7:
+            if fatos[autor]['partida'] in range(0, 8):
                 fatos[autor]['status']['Sanidade'] = 50
                 fatos[autor]['status']['Popularidade'] = 50
                 fatos[autor]['status']['Notas'] = 50
                 fatos[autor]['status']['Inteligência'] = 50
+                fatos[autor]['vividos'] = fatos[autor]['vividos'] - 1
+                if fatos[autor]['recorde'] < fatos[autor]['vividos']:
+                    fatos[autor]['recorde'] = fatos[autor]['vividos']
+                fatos[autor]['vividos'] = 0
             else:
                 await msg.channel.send(fatos[autor]['status'])            
             estado_do_jogador = estados[fatos[autor]['partida']]
@@ -108,7 +117,10 @@ async def on_message(msg):
             if value != 8000:
                     fatos[autor]['partida'] = value
             else:
+                fatos[autor]['vividos'] = fatos[autor]['vividos'] + 1
                 estado_anterior = fatos[autor]['partida']
+                if estado_anterior in range(0, 8):
+                    fatos[autor]['vividos'] = fatos[autor]['vividos'] - 1
                 moeda = estado_anterior
                 while estado_anterior == moeda:
                     moeda = random.choice(senarios)
@@ -129,11 +141,15 @@ async def on_message(msg):
                 fatos[autor]['partida'] = 6                
             elif fatos[autor]['status']['Inteligência'] >= 100:
                 fatos[autor]['partida'] = 7
-            if fatos[autor]['partida'] == 0 or fatos[autor]['partida'] == 1 or fatos[autor]['partida'] == 2 or fatos[autor]['partida'] == 3 or fatos[autor]['partida'] == 4 or fatos[autor]['partida'] == 5 or fatos[autor]['partida'] == 6 or fatos[autor]['partida'] == 7:
+            if fatos[autor]['partida'] in range(0, 8):
                 fatos[autor]['status']['Sanidade'] = 50
                 fatos[autor]['status']['Popularidade'] = 50
                 fatos[autor]['status']['Notas'] = 50
                 fatos[autor]['status']['Inteligência'] = 50
+                fatos[autor]['vividos'] = fatos[autor]['vividos'] - 1
+                if fatos[autor]['recorde'] < fatos[autor]['vividos']:
+                    fatos[autor]['recorde'] = fatos[autor]['vividos']
+                fatos[autor]['vividos'] = 0
             else:
                 await msg.channel.send(fatos[autor]['status'])            
             estado_do_jogador = estados[fatos[autor]['partida']]
@@ -142,8 +158,11 @@ async def on_message(msg):
     if fatos[autor]['partida'] >= 8 and msg.content.startswith('$socorro'):
         await msg.channel.send(choice(estado_do_jogador['frases']))
         await msg.channel.send(fatos[autor]['status'])
+    if fatos[autor]['partida'] >= 8 and msg.content.startswith('$recorde'):
+        await msg.channel.send(fatos[autor]['recorde'])
     elif fatos[autor]['partida'] >= 8 and msg.content.startswith('$'):
         await msg.channel.send('Digite \$socorro para receber ajuda')
+        await msg.channel.send('Digite \$recorde para receber seu recorde de cenarios sobreviviods')
 
 bot.run(getenv('DISCORD_TOKEN'))
 
