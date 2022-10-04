@@ -196,8 +196,8 @@ estados = {
         },
         'append_positivo': 8000,
         'append_negativo': 8000,
-        'remove_positivo': 8000,
-        'remove_negativo': 8000
+        'remove_positivo': 10,
+        'remove_negativo': 10
         
     },
     9: {

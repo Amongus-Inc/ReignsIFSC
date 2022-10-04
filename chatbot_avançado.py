@@ -53,7 +53,7 @@ async def on_message(msg):
             fatos[autor]['status']['Sanidade'] = status_sanidade + int(estado_do_jogador['positivos_sanidade'])
             fatos[autor]['status']['Popularidade'] = status_popularidade + int(estado_do_jogador['positivos_popularidade'])
             fatos[autor]['status']['Notas'] = status_notas + int(estado_do_jogador['positivos_notas'])
-            fatos[autor]['status']['Inteligência'] = status_inteligencia + int(estado_do_jogador['positivos_inteligência'])     
+            fatos[autor]['status']['Inteligência'] = status_inteligencia + int(estado_do_jogador['positivos_inteligência']) 
             if value != 8000:
                     fatos[autor]['partida'] = value
             else:
