@@ -8,6 +8,11 @@ mantenha a lista sempre na mesma ordem e mesmo com erros corrigidos deixe eles e
 - X 5 Tirar senarios das chances
 - X 6 Adicionar os senarios somente se eles não estão na lista
 - X 7 melhorar o sistema de lista e aleatoriedade
-- x sistema de contagem de canarios sobrevividos/canerios passados
-- adcionar os cenarios que causam morte
-- adicionar um sistema que depois de tantos cenarios ele pega um cenario final/sorteia um cenario final 
+- X 8 sistema de contagem de canarios sobrevividos/canerios passados
+- 9 adcionar os cenarios que causam morte
+- 10 adicionar um sistema que depois de tantos cenarios ele pega um cenario final/sorteia um cenario final 
+- X 11 Problemas no sistema de não escolher o mesmo cenário 2 vezes seguidas
+
+
+
+- Aparentemente esse bot não pode dar append ou remover mais de um cenario por escolha, eu tenho que testar isso

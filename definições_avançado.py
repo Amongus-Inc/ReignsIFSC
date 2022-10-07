@@ -49,11 +49,11 @@ estados = {
         'frases': ['morte popularidade baixa estado2'],
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
-        'positivos_sanidade': -30, 
+        'positivos_sanidade': 0, 
         'positivos_popularidade': 0,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
-        'negativos_sanidade': 30, 
+        'negativos_sanidade': 0, 
         'negativos_popularidade': 0,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
@@ -181,23 +181,23 @@ estados = {
         'frases': ['Ricardito quer se lanche você dá? cenario8'],
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
-        'positivos_sanidade': -25, 
+        'positivos_sanidade': 0, 
         'positivos_popularidade': 0,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
         'negativos_sanidade': 0, 
-        'negativos_popularidade': 0,
+        'negativos_popularidade': 25,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '\$[sS](i)+m': 8000},
+            '\$[sS](i)+m': 2048},
         'negativa_proximos_estados': {
             '\$[nN][aã]+o': 8000
         },
         'append_positivo': 8000,
         'append_negativo': 8000,
-        'remove_positivo': 10,
-        'remove_negativo': 10
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
         
     },
     9: {
@@ -208,7 +208,7 @@ estados = {
         'positivos_popularidade': 0,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
-        'negativos_sanidade': 0, 
+        'negativos_sanidade': 25, 
         'negativos_popularidade': 0,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
@@ -224,17 +224,17 @@ estados = {
         
     },
     10: {
-        'frases': ['cenario10'],
+        'frases': ['Ficar intêligente? cenario10'],
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
-        'positivos_sanidade': -25, 
+        'positivos_sanidade': 0, 
         'positivos_popularidade': 0,
         'positivos_notas': 0,
-        'positivos_inteligência': 0,
+        'positivos_inteligência': 25,
         'negativos_sanidade': 0, 
         'negativos_popularidade': 0,
         'negativos_notas': 0,
-        'negativos_inteligência': 0,
+        'negativos_inteligência': -25,
         'positivo_proximos_estados': {
             '\$[sS](i)+m': 8000},
         'negativa_proximos_estados': {
@@ -247,21 +247,21 @@ estados = {
         
     },
     2048: {
-        'frases': ['estado2048'],
+        'frases': ['Você têm certeza? continuação1, estado2048'],
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
-        'positivos_sanidade': -30, 
-        'positivos_popularidade': 0,
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': -25,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
-        'negativos_sanidade': 30, 
-        'negativos_popularidade': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 10,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '\$[sS](i)+m': 7},
+            '\$[sS](i)+m': 8000},
         'negativa_proximos_estados': {
-            '\$[nN][aã]+o': 2
+            '\$[nN][aã]+o': 8000
         },
         'append_positivo': 8000,
         'append_negativo': 8000,
@@ -342,6 +342,5 @@ fatos = {}
 #reservar 0-15 para derrotas
 #reservar 16-31 (quanto prescisar)
 #cenarios mormais 32-1023
-#cenarios de continuação 1024-2047
-#cenarios historias 2048-3000
-#fazer um dicionario com cada autor e uma lista dos cenarios que podem ser sorteados e também fazer o sistema de mortes
+#cenarios historias 1024-2047
+#cenarios de continuação 2048-3000
