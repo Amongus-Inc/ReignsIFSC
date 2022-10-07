@@ -43,7 +43,7 @@ async def on_message(msg):
     status_inteligencia = fatos[autor]['status']['Inteligência']
     for key, value in estado_do_jogador['positivo_proximos_estados'].items():
         if fullmatch(key, msg.content):            
-            await msg.channel.send(estado_do_jogador['frases_positivas'])
+            await msg.channel.send(estado_do_jogador['frases_positivas'], mention_author=True)
             senarios = fatos[autor]['cenarios']
             appender_positivo = estado_do_jogador['append_positivo']
             remover_positivo = estado_do_jogador['remove_positivo']
@@ -100,13 +100,13 @@ async def on_message(msg):
                     fatos[autor]['recorde'] = fatos[autor]['vividos']
                 fatos[autor]['vividos'] = 0
             else:
-                await msg.channel.send(fatos[autor]['status'])            
+                await msg.channel.send(fatos[autor]['status'], mention_author=True)            
             estado_do_jogador = estados[fatos[autor]['partida']]
-            await msg.channel.send(choice(estado_do_jogador['frases']))
+            await msg.channel.send(choice(estado_do_jogador['frases']), mention_author=True)
             return
     for key, value in estado_do_jogador['negativa_proximos_estados'].items():
         if fullmatch(key, msg.content):            
-            await msg.channel.send(estado_do_jogador['frases_negativas'])
+            await msg.channel.send(estado_do_jogador['frases_negativas'], mention_author=True)
             senarios = fatos[autor]['cenarios']
             appender_negativo = estado_do_jogador['append_negativo']
             remover_negativo = estado_do_jogador['remove_negativo']
@@ -163,20 +163,20 @@ async def on_message(msg):
                     fatos[autor]['recorde'] = fatos[autor]['vividos']
                 fatos[autor]['vividos'] = 0
             else:
-                await msg.channel.send(fatos[autor]['status'])            
+                await msg.channel.send(fatos[autor]['status'], mention_author=True)            
             estado_do_jogador = estados[fatos[autor]['partida']]
-            await msg.channel.send(choice(estado_do_jogador['frases']))
+            await msg.channel.send(choice(estado_do_jogador['frases']), mention_author=True)
             return
     if fatos[autor]['partida'] >= 8 and msg.content.startswith('$socorro'):        
-        await msg.channel.send(fatos[autor]['status'])
-        await msg.channel.send(choice(estado_do_jogador['frases']))
+        await msg.channel.send(fatos[autor]['status'], mention_author=True)
+        await msg.channel.send(choice(estado_do_jogador['frases']), mention_author=True)
         return
     if fatos[autor]['partida'] >= 8 and msg.content.startswith('$recorde'):
-        await msg.channel.send(fatos[autor]['recorde'])
+        await msg.channel.send(fatos[autor]['recorde'], mention_author=True)
         return
     elif fatos[autor]['partida'] >= 8 and msg.content.startswith('$'):
-        await msg.channel.send('Digite \$socorro para receber ajuda')
-        await msg.channel.send('Digite \$recorde para receber seu recorde de cenarios sobreviviods')
+        await msg.channel.send('Digite \$socorro para receber ajuda', mention_author=True)
+        await msg.channel.send('Digite \$recorde para receber seu recorde de cenarios sobreviviods', mention_author=True)
         return
 
 bot.run(getenv('DISCORD_TOKEN'))

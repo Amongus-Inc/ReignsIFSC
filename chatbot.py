@@ -14,9 +14,11 @@ class MyClient(discord.Client):
         # we do not want the bot to reply to itself
         if message.author.id == self.user.id:
             return
+        
+        if message.content.not_startswith('$'):
 
-        if message.content.startswith('!juca'):
-            await message.reply(random.choice(lista), mention_author=True)
+            if message.content.not_startswith('$a'):
+                await message.reply(random.choice(lista), mention_author=True)
 
 
 
