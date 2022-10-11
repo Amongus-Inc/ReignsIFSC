@@ -186,13 +186,13 @@ estados = {
         'positivos_notas': 0,
         'positivos_inteligência': 0,
         'negativos_sanidade': 0, 
-        'negativos_popularidade': 25,
+        'negativos_popularidade': 0,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '\$[sS](i)+m': 2048},
         'negativa_proximos_estados': {
-            '\$[nN][aã]+o': 8000
+            '\$[nN][aã]+o': 2048
         },
         'append_positivo': 8000,
         'append_negativo': 8000,
@@ -204,11 +204,11 @@ estados = {
         'frases': ['Você quer participar da aula do Carlyle? cenario9'],
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
-        'positivos_sanidade': -25, 
+        'positivos_sanidade': 0, 
         'positivos_popularidade': 0,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
-        'negativos_sanidade': 25, 
+        'negativos_sanidade': 0, 
         'negativos_popularidade': 0,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
@@ -251,11 +251,11 @@ estados = {
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
         'positivos_sanidade': 0, 
-        'positivos_popularidade': -25,
+        'positivos_popularidade': 0,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
         'negativos_sanidade': 0, 
-        'negativos_popularidade': 10,
+        'negativos_popularidade': 0,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
