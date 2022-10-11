@@ -1,4 +1,4 @@
-from definições_avançado import estados, fatos
+from dicionario import fatos
 import discord
 from discord.ext import commands
 from random import choice
@@ -31,12 +31,10 @@ async def on_message(msg):
                 'indignado': 20
                 }
 
-        if msg.content.startswith('$quao indignado vc esta?') and fatos[autor]['indignado'] in range(0, 11):
-            flip = fatos[autor]['indignado']
-            mais = flip + 2
-            while fatos[autor]['indignado'] >= flip:
-                flip = random.randint(1, mais)
-            fatos[autor]['indignado'] = flip
+        if msg.content.startswith('$quao indignado vc esta?') and fatos[autor]['indignado'] in range(0, 11):            
+            mais = fatos[autor]['indignado'] + 2
+            menos = fatos[autor]['indignado'] + 1
+            fatos[autor]['indignado'] = random.randint(menos, mais)
             if fatos[autor]['indignado'] == 1:
                 await msg.channel.send('tô um pouquinho indignado')
             if fatos[autor]['indignado'] == 2:
@@ -58,7 +56,7 @@ async def on_message(msg):
             if fatos[autor]['indignado'] >= 10:
                 await msg.channel.send('tô indignado pra caralho')
                 fatos[autor]['indignado'] = 0
-                await msg.reply(file= discord.File(path.join('imagens', random.choice(imagens))))
+                await msg.reply(file= discord.File(path.join('imagens', random.choice(imagens))),mention_author=False)
             return
         if msg.content.startswith('$quao indignado vc esta?') and fatos[autor]['indignado'] == 20:
             await msg.channel.send('Quem eu sou?')
