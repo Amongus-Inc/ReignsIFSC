@@ -49,11 +49,16 @@ async def on_message(msg):
                 if remover_positivo != 8000:
                     if remover_positivo in senarios:
                         senarios.remove(remover_positivo)
-                fatos[autor]['cenarios'] = senarios
-                fatos[autor]['status']['Sanidade'] = fato_do_jogador['status']['Sanidade'] + int(estado_do_jogador['positivos_sanidade'])
-                fatos[autor]['status']['Popularidade'] = fato_do_jogador['status']['Popularidade'] + int(estado_do_jogador['positivos_popularidade'])
-                fatos[autor]['status']['Notas'] = fato_do_jogador['status']['Notas'] + int(estado_do_jogador['positivos_notas'])
-                fatos[autor]['status']['Inteligência'] = fato_do_jogador['status']['Inteligência'] + int(estado_do_jogador['positivos_inteligência'])
+                if fato_do_jogador['cenarios'] != senarios:
+                    fatos[autor]['cenarios'] = senarios
+                if fato_do_jogador['status']['Sanidade'] != 0:
+                    fatos[autor]['status']['Sanidade'] = fato_do_jogador['status']['Sanidade'] + int(estado_do_jogador['positivos_sanidade'])
+                if fato_do_jogador['status']['Popularidade'] != 0:
+                    fatos[autor]['status']['Popularidade'] = fato_do_jogador['status']['Popularidade'] + int(estado_do_jogador['positivos_popularidade'])
+                if fato_do_jogador['status']['Notas'] != 0:
+                    fatos[autor]['status']['Notas'] = fato_do_jogador['status']['Notas'] + int(estado_do_jogador['positivos_notas'])
+                if fato_do_jogador['status']['Inteligência'] != 0:
+                    fatos[autor]['status']['Inteligência'] = fato_do_jogador['status']['Inteligência'] + int(estado_do_jogador['positivos_inteligência'])
                 fato_do_jogador = fatos[autor]
                 if fato_do_jogador['status']['Sanidade'] <= 0:
                     fatos[autor]['partida'] = 0
@@ -116,11 +121,16 @@ async def on_message(msg):
                 if remover_negativo != 8000:
                     if remover_negativo in senarios:
                         senarios.remove(remover_negativo)
-                fatos[autor]['cenarios'] = senarios
-                fatos[autor]['status']['Sanidade'] = fato_do_jogador['status']['Sanidade'] + int(estado_do_jogador['negativos_sanidade'])
-                fatos[autor]['status']['Popularidade'] = fato_do_jogador['status']['Popularidade'] + int(estado_do_jogador['negativos_popularidade'])
-                fatos[autor]['status']['Notas'] = fato_do_jogador['status']['Notas'] + int(estado_do_jogador['negativos_notas'])
-                fatos[autor]['status']['Inteligência'] = fato_do_jogador['status']['Inteligência'] + int(estado_do_jogador['negativos_inteligência'])
+                if fato_do_jogador['cenarios'] != senarios:
+                    fatos[autor]['cenarios'] = senarios
+                if fato_do_jogador['status']['Sanidade'] != 0:
+                    fatos[autor]['status']['Sanidade'] = fato_do_jogador['status']['Sanidade'] + int(estado_do_jogador['negativos_sanidade'])
+                if fato_do_jogador['status']['Popularidade'] != 0:
+                    fatos[autor]['status']['Popularidade'] = fato_do_jogador['status']['Popularidade'] + int(estado_do_jogador['negativos_popularidade'])
+                if fato_do_jogador['status']['Notas'] != 0:
+                    fatos[autor]['status']['Notas'] = fato_do_jogador['status']['Notas'] + int(estado_do_jogador['negativos_notas'])
+                if fato_do_jogador['status']['Inteligência'] != 0:
+                    fatos[autor]['status']['Inteligência'] = fato_do_jogador['status']['Inteligência'] + int(estado_do_jogador['negativos_inteligência'])
                 fato_do_jogador = fatos[autor]
                 if fato_do_jogador['status']['Sanidade'] <= 0:
                     fatos[autor]['partida'] = 0
