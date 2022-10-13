@@ -30,7 +30,7 @@ async def on_message(msg):
                 'Notas': 50,
                 'Inteligência': 50
                 },
-                'cenarios': [8, 9, 10],
+                'cenarios': [8, 9],
                 'estado_anterior_aleatorio': 9000
             }
         
@@ -51,13 +51,13 @@ async def on_message(msg):
                         senarios.remove(remover_positivo)
                 if fato_do_jogador['cenarios'] != senarios:
                     fatos[autor]['cenarios'] = senarios
-                if fato_do_jogador['status']['Sanidade'] != 0:
+                if estado_do_jogador['positivos_sanidade'] != 0:
                     fatos[autor]['status']['Sanidade'] = fato_do_jogador['status']['Sanidade'] + int(estado_do_jogador['positivos_sanidade'])
-                if fato_do_jogador['status']['Popularidade'] != 0:
+                if estado_do_jogador['positivos_popularidade'] != 0:
                     fatos[autor]['status']['Popularidade'] = fato_do_jogador['status']['Popularidade'] + int(estado_do_jogador['positivos_popularidade'])
-                if fato_do_jogador['status']['Notas'] != 0:
+                if estado_do_jogador['positivos_notas'] != 0:
                     fatos[autor]['status']['Notas'] = fato_do_jogador['status']['Notas'] + int(estado_do_jogador['positivos_notas'])
-                if fato_do_jogador['status']['Inteligência'] != 0:
+                if estado_do_jogador['positivos_inteligência'] != 0:
                     fatos[autor]['status']['Inteligência'] = fato_do_jogador['status']['Inteligência'] + int(estado_do_jogador['positivos_inteligência'])
                 fato_do_jogador = fatos[autor]
                 if fato_do_jogador['status']['Sanidade'] <= 0:
@@ -92,7 +92,7 @@ async def on_message(msg):
                         fatos[autor]['partida'] = value
                         fato_do_jogador = fatos[autor]
                     else:
-                        if estado_anterior not in range(2048, 3001):
+                        if estado_anterior not in range(2048, 3001) and estado_anterior not in range(0, 8):
                             fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                             fato_do_jogador = fatos[autor]
                         flip = fato_do_jogador['estado_anterior_aleatorio']
@@ -123,13 +123,13 @@ async def on_message(msg):
                         senarios.remove(remover_negativo)
                 if fato_do_jogador['cenarios'] != senarios:
                     fatos[autor]['cenarios'] = senarios
-                if fato_do_jogador['status']['Sanidade'] != 0:
+                if estado_do_jogador['negativos_sanidade'] != 0:
                     fatos[autor]['status']['Sanidade'] = fato_do_jogador['status']['Sanidade'] + int(estado_do_jogador['negativos_sanidade'])
-                if fato_do_jogador['status']['Popularidade'] != 0:
+                if estado_do_jogador['negativos_popularidade'] != 0:
                     fatos[autor]['status']['Popularidade'] = fato_do_jogador['status']['Popularidade'] + int(estado_do_jogador['negativos_popularidade'])
-                if fato_do_jogador['status']['Notas'] != 0:
+                if estado_do_jogador['negativos_notas'] != 0:
                     fatos[autor]['status']['Notas'] = fato_do_jogador['status']['Notas'] + int(estado_do_jogador['negativos_notas'])
-                if fato_do_jogador['status']['Inteligência'] != 0:
+                if estado_do_jogador['negativos_inteligência'] != 0:
                     fatos[autor]['status']['Inteligência'] = fato_do_jogador['status']['Inteligência'] + int(estado_do_jogador['negativos_inteligência'])
                 fato_do_jogador = fatos[autor]
                 if fato_do_jogador['status']['Sanidade'] <= 0:
@@ -164,7 +164,7 @@ async def on_message(msg):
                         fatos[autor]['partida'] = value
                         fato_do_jogador = fatos[autor]
                     else:
-                        if estado_anterior not in range(2048, 3001):
+                        if estado_anterior not in range(2048, 3001) and estado_anterior not in range(0, 8):
                             fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                             fato_do_jogador = fatos[autor]
                         flip = fato_do_jogador['estado_anterior_aleatorio']
