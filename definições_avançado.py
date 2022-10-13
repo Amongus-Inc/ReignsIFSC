@@ -217,10 +217,10 @@ estados = {
         'negativa_proximos_estados': {
             '\$[nN][aã]+o': 8000
         },
-        'append_positivo': 8000,
-        'append_negativo': 8000,
-        'remove_positivo': 8000,
-        'remove_negativo': 8000
+        'append_positivo': 10,
+        'append_negativo': 10,
+        'remove_positivo': 9,
+        'remove_negativo': 9
         
     },
     10: {

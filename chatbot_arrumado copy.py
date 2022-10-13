@@ -38,10 +38,10 @@ async def on_message(msg):
         fato_do_jogador = fatos[autor]
         estado_do_jogador = estados[fato_do_jogador['partida']]
         estado_anterior = fato_do_jogador['partida']
+        senarios = fato_do_jogador['cenarios']
         for key, value in estado_do_jogador['positivo_proximos_estados'].items():
             if fullmatch(key, msg.content):            
-                await msg.channel.send(estado_do_jogador['frases_positivas'])
-                senarios = fato_do_jogador['cenarios']
+                await msg.channel.send(estado_do_jogador['frases_positivas'])                
                 appender_positivo = estado_do_jogador['append_positivo']
                 remover_positivo = estado_do_jogador['remove_positivo']
                 if appender_positivo != 8000:
@@ -50,8 +50,6 @@ async def on_message(msg):
                 if remover_positivo != 8000:
                     if remover_positivo in senarios:
                         senarios.remove(remover_positivo)
-                if fato_do_jogador['cenarios'] != senarios:
-                    fatos[autor]['cenarios'] = senarios
                 if estado_do_jogador['positivos_sanidade'] != 0:
                     fatos[autor]['status']['Sanidade'] = fato_do_jogador['status']['Sanidade'] + int(estado_do_jogador['positivos_sanidade'])
                 if estado_do_jogador['positivos_popularidade'] != 0:
@@ -121,7 +119,6 @@ async def on_message(msg):
         for key, value in estado_do_jogador['negativa_proximos_estados'].items():
             if fullmatch(key, msg.content):            
                 await msg.channel.send(estado_do_jogador['frases_negativas'])
-                senarios = fato_do_jogador['cenarios']
                 appender_negativo = estado_do_jogador['append_negativo']
                 remover_negativo = estado_do_jogador['remove_negativo']
                 if appender_negativo != 8000:
@@ -130,8 +127,6 @@ async def on_message(msg):
                 if remover_negativo != 8000:
                     if remover_negativo in senarios:
                         senarios.remove(remover_negativo)
-                if fato_do_jogador['cenarios'] != senarios:
-                    fatos[autor]['cenarios'] = senarios
                 if estado_do_jogador['negativos_sanidade'] != 0:
                     fatos[autor]['status']['Sanidade'] = fato_do_jogador['status']['Sanidade'] + int(estado_do_jogador['negativos_sanidade'])
                 if estado_do_jogador['negativos_popularidade'] != 0:
@@ -208,3 +203,5 @@ async def on_message(msg):
 
 bot.run(getenv('DISCORD_TOKEN'))
 
+#if fato_do_jogador['cenarios'] != senarios:
+#    fatos[autor]['cenarios'] = senarios
