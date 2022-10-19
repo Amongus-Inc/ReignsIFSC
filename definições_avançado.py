@@ -274,8 +274,8 @@ estados = {
         'frases_negativas': 'O professor zera a prova do aluno mas se recusa a te recompensar.',
         'positivos_sanidade': 0, 
         'positivos_popularidade': 0,
-        'positivos_notas': 0,
-        'positivos_inteligência': 0,
+        'positivos_notas': 15,
+        'positivos_inteligência': 10,
         'negativos_sanidade': 0, 
         'negativos_popularidade': -40,
         'negativos_notas': 0,
@@ -339,13 +339,13 @@ estados = {
         'frases_positivas': 'Você dá azar e não tem papel para secar suas mãos. Você decide sacudir as mãos até que elas fiquem secas, e acaba parecendo um idiota.',
         'frases_negativas': 'Você não consegue segurar a vontade da natureza, e acaba acontecendo um acidente.',
         'positivos_sanidade': 0, 
-        'positivos_popularidade': -20,
+        'positivos_popularidade': -7,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
         'negativos_sanidade': 0, 
         'negativos_popularidade': -10,
         'negativos_notas': 0,
-        'negativos_inteligência': -0,
+        'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '\$1': 8000},
         'negativa_proximos_estados': {
@@ -381,16 +381,16 @@ estados = {
     },
     39: {
         'frases': ['Durante a prova de história, você percebe que o Ricardito está copiando da sua prova. Você... \n 1=...deixa ele copiar \n 2=...decide fazer algo sobre isso'],
-        'frases_positivas': '',
-        'frases_negativas': 'descisão certa, ganha respeito',
+        'frases_positivas': 'Você finge que não viu e ele copia sua prova inteira',
+        'frases_negativas': '',
         'positivos_sanidade': 0, 
-        'positivos_popularidade': 0,
+        'positivos_popularidade': 14,
         'positivos_notas': 0,
-        'positivos_inteligência': 25,
+        'positivos_inteligência': 0,
         'negativos_sanidade': 0, 
         'negativos_popularidade': 0,
         'negativos_notas': 0,
-        'negativos_inteligência': -25,
+        'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '\$1': 8000},
         'negativa_proximos_estados': {
@@ -426,9 +426,9 @@ estados = {
         
     },
     41: {
-        'frases': ['A próxima aula é do Carlyle. Você decide... \n 1=Matar a aula e ir no Mini Kalzone com os casas \n 2=Ir na aula e (tentar) prestar atenção na aula'],
-        'frases_positivas': '',
-        'frases_negativas': '',
+        'frases': ['A próxima aula é do Carlyle. Você decide... \n 1=...matar a aula e ir no Mini Kalzone com os casas \n 2=...ir na aula e (tentar) prestar atenção na aula'],
+        'frases_positivas': 'Você se diverte com seus casas no Mini Kalzone, até decidir pedir um sorvetão de morango e perceber que é horrível e que jogou fora seu dinheiro',
+        'frases_negativas': 'A aula dele é terrível, mas você consegue acompanhar uma parte da matéria',
         'positivos_sanidade': 18, 
         'positivos_popularidade': 0,
         'positivos_notas': 0,
@@ -450,15 +450,15 @@ estados = {
     },
     42: {
         'frases': ['É domingo de noite e você lembra que tem que entregar um relatório de biologia na segunda. Você... \n 1=...passa a noite acordado fazendo. \n 2=...tem uma boa noite de sono.'],
-        'frases_positivas': '',
-        'frases_negativas': '',
+        'frases_positivas': 'Você passa quase a noite inteira escrevendo seu relatório e vai pra aula praticamente morto',
+        'frases_negativas': 'Você dorme igual um neném, porém com a consciência pesada',
         'positivos_sanidade': -11, 
         'positivos_popularidade': 0,
-        'positivos_notas': 12,
+        'positivos_notas': 15,
         'positivos_inteligência': 0,
         'negativos_sanidade': 15, 
         'negativos_popularidade': 0,
-        'negativos_notas': -12,
+        'negativos_notas': -11,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
             '\$1': 8000},
@@ -472,15 +472,15 @@ estados = {
         
     },
     43: {
-        'frases': ['Richard te pede um pedaço de seu lanche, você dá? \n 1=Sim \n 2=Não'],
-        'frases_positivas': 'Você fica com sede mas nada acontece.',
-        'frases_negativas': 'Você dá azar e bebe de um bebedouro com água quente.',
+        'frases': ['Richard te pede um "pedacinho" do seu lanche, você dá? \n 1=Sim \n 2=Não'],
+        'frases_positivas': 'Ele mente e pega uma grande parte do seu lanche. Você fica triste, porém faz amizade com ele. Ainda está em dúvida se isso é bom ou ruim.',
+        'frases_negativas': 'Richard fica triste com você, mas pelo menos o lanche é todo seu',
         'positivos_sanidade': -7, 
         'positivos_popularidade': 10,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
         'negativos_sanidade': 10, 
-        'negativos_popularidade': -7,
+        'negativos_popularidade': -5,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
@@ -500,9 +500,9 @@ estados = {
         'frases_negativas': '',
         'positivos_sanidade': 0, 
         'positivos_popularidade': 0,
-        'positivos_notas': 0,
+        'positivos_notas': 8,
         'positivos_inteligência': 8,
-        'negativos_sanidade': 0, 
+        'negativos_sanidade': 7, 
         'negativos_popularidade': 9,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
@@ -519,7 +519,7 @@ estados = {
     },
     45: {
         'frases': ['Alguém que você conhece mas não muito bem esbarra em você, o que você faz? \n 1=Finge que nada aconteceu \n 2=Cumprimenta a pessoa'],
-        'frases_positivas': '',
+        'frases_positivas': 'Você pede desculpa e segue em frente',
         'frases_negativas': 'Você confunde ele com outra pessoa e ele só te ignora',
         'positivos_sanidade': 7, 
         'positivos_popularidade': 0,
@@ -542,7 +542,7 @@ estados = {
     },
     46: {
         'frases': ['Você está no recreio e com fome. Você decide...\n 1=...comer as fruta la \n 2=Comprar um lanche na cantina'],
-        'frases_positivas': 'A fruta tava podre',
+        'frases_positivas': 'A fruta tava podre e você fica enjoado',
         'frases_negativas': 'Você sacia sua fome mas também pagou bem caro por isso, burro.',
         'positivos_sanidade': -7, 
         'positivos_popularidade': 0,
@@ -564,7 +564,7 @@ estados = {
         
     },
     47: {
-        'frases': ['Te chamam pra jogar de goleiro o interclasse \n 1=Sim \n 2=Não'],
+        'frases': ['Te chamam pra jogar de goleiro o interclasse. Você vai? \n 1=Não\n 2=Sim'],
         'frases_positivas': 'Boa decisão',
         'frases_negativas': 'Você entra no interclasse e franga gol',
         'positivos_sanidade': 9, 
@@ -588,14 +588,14 @@ estados = {
     },
     48: {
         'frases': ['Você ta de boa no relaxa ai e tropeça num pufe. Você... \n 1=da um rolamento \n 2=cai no chão'],
-        'frases_positivas': '',
-        'frases_negativas': '',
+        'frases_positivas': 'Você executa um rolamento perfeito e impressiona todas as outras 2 pessoas que estavam matando aula no relaxa aí',
+        'frases_negativas': 'Você cai no chão e parece um idiota',
         'positivos_sanidade': 0, 
         'positivos_popularidade': 9,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
         'negativos_sanidade': 0, 
-        'negativos_popularidade': -9,
+        'negativos_popularidade': -7,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
@@ -611,18 +611,18 @@ estados = {
     },
     49: {
         'frases': ['Mongol gigante te chama pro soco no karate do marquinhos. Você...\n 1=...desvia dos golpes \n 2=bate de frente com ele'],
-        'frases_positivas': '',
-        'frases_negativas': '',
-        'positivos_sanidade': 0, 
-        'positivos_popularidade': 9,
+        'frases_positivas': 'Você é ágil demais para o mongol, e ele erra todos os golpses, caindo no chão',
+        'frases_negativas': 'Ele é muito maior que você e te derrota facilmente',
+        'positivos_sanidade': 10, 
+        'positivos_popularidade': 10,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
-        'negativos_sanidade': 0, 
-        'negativos_popularidade': -9,
+        'negativos_sanidade': -10, 
+        'negativos_popularidade': -10,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '\$1': 8000},
+            '\$1': 2049},
         'negativa_proximos_estados': {
             '\$2': 8000
         },
@@ -634,11 +634,11 @@ estados = {
     },
     2048: {
         'frases': ['O que? \n 1=Escreve as respostas erradas para ele copiar e no último segundo corrige. \n 2=Dedura ele.'],
-        'frases_positivas': '',
-        'frases_negativas': '',
+        'frases_positivas': 'Ele nem percebe que você fez isso e sai feliz da sala, achando que vai conseguir tirar uma boa nota',
+        'frases_negativas': 'Você dedura ele e todos acham você um otário',
         'positivos_sanidade': 0, 
-        'positivos_popularidade': 11,
-        'positivos_notas': 0,
+        'positivos_popularidade': 0,
+        'positivos_notas': 15,
         'positivos_inteligência': 13,
         'negativos_sanidade': 0, 
         'negativos_popularidade': -20,
@@ -655,15 +655,15 @@ estados = {
         'remove_negativo': 8000
     },
     2049: {
-        'frases': ['estado2049'],
-        'frases_positivas': 'isso não é muito legal',
-        'frases_negativas': 'descisão certa, ganha respeito',
-        'positivos_sanidade': -30, 
-        'positivos_popularidade': 0,
+        'frases': ['O que você faz em seguida? \n 1=Correr \n 2=Aproveito o momento perfeito para retaliar'],
+        'frases_positivas': 'Você corre da luta e perde o respeito de todos',
+        'frases_negativas': 'Você utiliza do momento de fraqueza do mongol e finaliza ele no chão, ganhando a luta',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': -15,
         'positivos_notas': 0,
         'positivos_inteligência': 0,
-        'negativos_sanidade': 30, 
-        'negativos_popularidade': 0,
+        'negativos_sanidade': 10, 
+        'negativos_popularidade': 15,
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
@@ -676,50 +676,6 @@ estados = {
         'remove_positivo': 8000,
         'remove_negativo': 8000
     },    
-    2050: {
-        'frases': ['estado2050'],
-        'frases_positivas': 'isso não é muito legal',
-        'frases_negativas': 'descisão certa, ganha respeito',
-        'positivos_sanidade': -30, 
-        'positivos_popularidade': 0,
-        'positivos_notas': 0,
-        'positivos_inteligência': 0,
-        'negativos_sanidade': 30, 
-        'negativos_popularidade': 0,
-        'negativos_notas': 0,
-        'negativos_inteligência': 0,
-        'positivo_proximos_estados': {
-            '\$[sS](i)+m': 7},
-        'negativa_proximos_estados': {
-            '\$[nN][aã]+o': 2
-        },
-        'append_positivo': 8000,
-        'append_negativo': 8000,
-        'remove_positivo': 8000,
-        'remove_negativo': 8000
-    },    
-    2051: {
-        'frases': ['estado2051'],
-        'frases_positivas': 'isso não é muito legal',
-        'frases_negativas': 'descisão certa, ganha respeito',
-        'positivos_sanidade': -30, 
-        'positivos_popularidade': 0,
-        'positivos_notas': 0,
-        'positivos_inteligência': 0,
-        'negativos_sanidade': 30, 
-        'negativos_popularidade': 0,
-        'negativos_notas': 0,
-        'negativos_inteligência': 0,
-        'positivo_proximos_estados': {
-            '\$[sS](i)+m': 7},
-        'negativa_proximos_estados': {
-            '\$[nN][aã]+o': 2
-        },
-        'append_positivo': 8000,
-        'append_negativo': 8000,
-        'remove_positivo': 8000,
-        'remove_negativo': 8000
-    }
 }
 
 # Dicionário com os estados correntes de cada jogador.
