@@ -200,29 +200,7 @@ estados = {
         'remove_negativo': 8000
         
     },
-    9: {
-        'frases': ['Você quer participar da aula do Carlyle? cenario9'],
-        'frases_positivas': 'isso não é muito legal',
-        'frases_negativas': 'descisão certa, ganha respeito',
-        'positivos_sanidade': 25, 
-        'positivos_popularidade': 25,
-        'positivos_notas': 25,
-        'positivos_inteligência': 25,
-        'negativos_sanidade': 25, 
-        'negativos_popularidade': 25,
-        'negativos_notas': 25,
-        'negativos_inteligência': 25,
-        'positivo_proximos_estados': {
-            '\$[sS](i)+m': 8000},
-        'negativa_proximos_estados': {
-            '\$[nN][aã]+o': 8000
-        },
-        'append_positivo': 10,
-        'append_negativo': 10,
-        'remove_positivo': 9,
-        'remove_negativo': 9
-        
-    },
+    
     32: {
         'frases': ['Um buraco foi aberto para reformas no esgoto do ifsc, no fundo você vê algo brilhante. Quer pegar? \n 1=Sim \n 2=Não'],
         'frases_positivas': '',

@@ -99,7 +99,7 @@ async def on_message(msg):
                         fatos[autor]['partida'] = value
                         fato_do_jogador = fatos[autor]
                     else:
-                        if estado_anterior not in range(2048, 3001) and estado_anterior not in range(0, 8):
+                        if estado_anterior not in range(2048, 3001) and estado_anterior not in range(0, 16):
                             fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                             fato_do_jogador = fatos[autor]
                         flip = fato_do_jogador['estado_anterior_aleatorio']
@@ -176,7 +176,7 @@ async def on_message(msg):
                         fatos[autor]['partida'] = value
                         fato_do_jogador = fatos[autor]
                     else:
-                        if estado_anterior not in range(2048, 3001) and estado_anterior not in range(0, 8):
+                        if estado_anterior not in range(2048, 3001) and estado_anterior not in range(0, 16):
                             fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                             fato_do_jogador = fatos[autor]
                         flip = fato_do_jogador['estado_anterior_aleatorio']
