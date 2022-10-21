@@ -205,12 +205,15 @@ async def on_message(msg):
                 estado_do_jogador = estados[fato_do_jogador['partida']]
                 await msg.channel.send(choice(estado_do_jogador['frases']))
                 return
-        if fato_do_jogador['partida'] >= 8 and msg.content.startswith('$socorro'):        
+        if fato_do_jogador['partida'] >= 16 and msg.content.startswith('$socorro'):        
             await msg.channel.send(fato_do_jogador['status'])
             await msg.channel.send(choice(estado_do_jogador['frases']))
             return
-        elif fato_do_jogador['partida'] >= 8 and msg.content.startswith('$'):
+        elif fato_do_jogador['partida'] >= 16 and msg.content.startswith('$'):
             await msg.channel.send('Digite \$socorro para receber ajuda')
+            return
+        elif fato_do_jogador['partida'] < 16 and msg.content.startswith('$'):
+            await msg.channel.send('Digite \$o que para proceguir após uma morte, assim como no jogo original de Reigns')
             return
 
 bot.run(getenv('DISCORD_TOKEN'))
