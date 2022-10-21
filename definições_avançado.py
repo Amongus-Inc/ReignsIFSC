@@ -203,7 +203,7 @@ estados = {
     
     32: {
         'frases': ['Um buraco foi aberto para reformas no esgoto do ifsc, no fundo você vê algo brilhante. Quer pegar? \n 1=Sim \n 2=Não'],
-        'frases_positivas': '',
+        'frases_positivas': '_',
         'frases_negativas': 'você ignora o objeto brilhante e continua com seu dia',
         'positivos_sanidade': 0, 
         'positivos_popularidade': 0,
@@ -248,7 +248,7 @@ estados = {
         
     },34: {
         'frases': ['Durante uma prova, você vê um aluno colando. O que você faz? \n 1=Ignora e termina sua prova \n 2=Dedura para aumentar sua nota'],
-        'frases_positivas': '',
+        'frases_positivas': '_',
         'frases_negativas': 'O professor zera a prova do aluno mas se recusa a te recompensar.',
         'positivos_sanidade': 0, 
         'positivos_popularidade': 0,
@@ -292,8 +292,8 @@ estados = {
         
     },36: {
         'frases': ['Depois de chegar na sala e se sentar, diversas pessoas mais velhas entram se dizendo veteranos, estando lá para escolher um "mono-modelo". Você é escolhido. O que você faz? \n 1=Aceita e participa da brincadeira \n 2=Nega o título à todo custo'],
-        'frases_positivas': '',
-        'frases_negativas': '',
+        'frases_positivas': '_',
+        'frases_negativas': '_',
         'positivos_sanidade': 0, 
         'positivos_popularidade': 15,
         'positivos_notas': 0,
@@ -360,7 +360,7 @@ estados = {
     39: {
         'frases': ['Durante a prova de história, você percebe que o Ricardito está copiando da sua prova. Você... \n 1=...deixa ele copiar \n 2=...decide fazer algo sobre isso'],
         'frases_positivas': 'Você finge que não viu e ele copia sua prova inteira',
-        'frases_negativas': '',
+        'frases_negativas': '_',
         'positivos_sanidade': 0, 
         'positivos_popularidade': 14,
         'positivos_notas': 0,
@@ -474,8 +474,8 @@ estados = {
     },
     44: {
         'frases': ['Você ta na aula do Volmir. Você... \n 1=...decide aprender OS SILOuGISMOS \n 2=...decide zoar o sotaque dele'],
-        'frases_positivas': '',
-        'frases_negativas': '',
+        'frases_positivas': '_',
+        'frases_negativas': '_',
         'positivos_sanidade': 0, 
         'positivos_popularidade': 0,
         'positivos_notas': 8,
@@ -623,9 +623,9 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '\$[sS](i)+m': 8000},
+            '\$1': 8000},
         'negativa_proximos_estados': {
-            '\$[nN][aã]+o': 8000
+            '\$2': 8000
         },
         'append_positivo': 8000,
         'append_negativo': 8000,
@@ -645,15 +645,258 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '\$[sS](i)+m': 7},
+            '\$1': 8000},
         'negativa_proximos_estados': {
-            '\$[nN][aã]+o': 2
+            '\$2': 8000
         },
         'append_positivo': 8000,
         'append_negativo': 8000,
         'remove_positivo': 8000,
         'remove_negativo': 8000
-    },    
+    },
+    2050: {
+        'frases': ['Quer fazer o tutorial? \n 1=Sim \n 2=Não'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 2051},
+        'negativa_proximos_estados': {
+            '\$2': 2060
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+    2051: {
+        'frases': ['Bem vindo ao Reigns IFSC! Esse tutorial lhe introduzirá as mecânicas básicas de escolhas e status que você terá de lidar durante o jogo. \n 1=Entendi \n 2=OK'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 2052},
+        'negativa_proximos_estados': {
+            '\$2': 2052
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+    2052: {
+        'frases': ['Nesse jogo, você possui 4 status: Sanidade, Popularidade, Notas e Inteligência. Você deve administrá-los, evitando que eles cheguem em 0 ou 100. Caso isso aconteça, você vai morrer. \n 1=Vou morrer!? \n 2=OK'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 2053},
+        'negativa_proximos_estados': {
+            '\$2': 2053
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+    2053: {
+        'frases': ['Todas suas escolhas tem consequências, podendo diminuir ou aumentar um ou mais status. Depende de você decidir qual a melhor opção. Este tutorial serve para você aprender as mecânicas básicas, portanto, não haverão consequências. Depois disso, cada escolha sua importa, e você estará por conta própria. \n 1=OK \n 2=Saquei'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 2054},
+        'negativa_proximos_estados': {
+            '\$2': 2054
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+    2054: {
+        'frases': ['Por algum motivo, você acha que é uma boa ideia entrar no IFSC, e decide se inscrever para realizar a prova. O teste é daqui a 7 dias. Você decide estudar durante essa semana? \n 1=Sim \n 2=Não'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 10,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': -10,
+        'positivo_proximos_estados': {
+            '\$1': 2055},
+        'negativa_proximos_estados': {
+            '\$2': 2055
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+    2055: {
+        'frases': ['Uma semana se passa. A prova é amanhã. Você decide virar a noite jogando? \n 1=Sim \n 2=Não'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': -10, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 10, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 2056},
+        'negativa_proximos_estados': {
+            '\$2': 2056
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+    2056: {
+        'frases': ['Hoje é o dia da prova. Você chega no IFSC e encontra sua sala e mesa, e se senta para fazer a prova. Você se sente nervoso? \n 1=Sim \n 2=Não'],
+        'frases_positivas': 'Você fica nervoso demais na hora da prova e corre para o banheiro. Todos em volta olham para você e te acham um esquisito.',
+        'frases_negativas': 'Sua tranquilidade nesse momento de pressão te faz parecer um chad.',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': -10,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 10,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 2057},
+        'negativa_proximos_estados': {
+            '\$2': 2058
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+    2057: {
+        'frases': ['Depois de se acalmar, você volta para a sala. O inspetor entrega a prova para todos. Hora de mostrar do que você é capaz. Você lê a primeira questão: Complete corretamente a espaço vazio: Ele saiu cedo de casa, ____ o congestionamento o atrasou.\n 1=Mas \n 2=Mais'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 10,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': -10,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 2059},
+        'negativa_proximos_estados': {
+            '\$2': 2059
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+    2058: {
+        'frases': ['O inspetor entrega a prova. Hora de mostrar do que você é capaz. Você lê a primeira questão: Sem ___ nem menos, decidiu viajar para a Europa. \n 1=Mas \n 2=Mais'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': -10,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 10,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 2059},
+        'negativa_proximos_estados': {
+            '\$2': 2059
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+    2059: {
+        'frases': ['Parabéns! Você concluiu o tutorial e conseguiu entrar no IFSC. Mas não fique feliz, os problemas só começaram, afinal agora você precisa sofrer por 4 anos seguidos, e tudo fica pior a cada semestre que se passa. Boa sorte. \n 1=Beleza \n 2=OK'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 2060},
+        'negativa_proximos_estados': {
+            '\$2': 2060
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+    2060: {
+        'frases': ['Você chega ao IFSC, ansioso e, um pouco, nervoso para seu primeiro dia de aula. Ao subir as escadas, se vê cercado por uma multidão de pessoas que apenas gritam uma palavra "mono", você não sabe o que isso significa ou quais são suas intensões com essa ação. O que você faz? \n 1=Começa a chorar e corre \n 2=Tenta parecer calmo e os ignora'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': -15,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': -15, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 8000},
+        'negativa_proximos_estados': {
+            '\$2': 8000
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+    },  
+        
 }
 
 # Dicionário com os estados correntes de cada jogador.

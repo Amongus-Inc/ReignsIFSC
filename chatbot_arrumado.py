@@ -25,7 +25,7 @@ async def on_message(msg):
         autor = msg.author.id
         if autor not in fatos:
             fatos[autor] = {
-                'partida': 32,
+                'partida': 2050,
                 'status': {'Sanidade': 50,
                 'Popularidade': 50,
                 'Notas': 50,
@@ -92,7 +92,13 @@ async def on_message(msg):
                     fatos[autor]['partida'] = 7
                     fato_do_jogador = fatos[autor]
                 if fato_do_jogador['status']['Inteligência'] in range(1, 100) and fato_do_jogador['status']['Notas'] in range(1, 100) and fato_do_jogador['status']['Popularidade'] in range(1, 100) and fato_do_jogador['status']['Sanidade'] in range(1, 100):
-                    await msg.channel.send(fatos[autor]['status'])
+                    if value == 2060:
+                        fatos[autor]['status']['Sanidade'] = 50
+                        fatos[autor]['status']['Popularidade'] = 50
+                        fatos[autor]['status']['Notas'] = 50
+                        fatos[autor]['status']['Inteligência'] = 50
+                        fato_do_jogador = fatos[autor]
+                    await msg.channel.send(fato_do_jogador['status'])
                     if value != 8000:
                         if fato_do_jogador['partida'] not in range(2048, 3001):
                             fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']                    
@@ -107,7 +113,7 @@ async def on_message(msg):
                             flip = random.choice(senarios)
                         fatos[autor]['partida'] = flip
                         fato_do_jogador = fatos[autor]                                                                            
-                if fato_do_jogador['partida'] in range(0, 8):
+                if fato_do_jogador['partida'] in range(0, 16):
                     fatos[autor]['status']['Sanidade'] = 50
                     fatos[autor]['status']['Popularidade'] = 50
                     fatos[autor]['status']['Notas'] = 50
@@ -169,7 +175,13 @@ async def on_message(msg):
                     fatos[autor]['partida'] = 7
                     fato_do_jogador = fatos[autor]
                 if fato_do_jogador['status']['Inteligência'] in range(1, 100) and fato_do_jogador['status']['Notas'] in range(1, 100) and fato_do_jogador['status']['Popularidade'] in range(1, 100) and fato_do_jogador['status']['Sanidade'] in range(1, 100):
-                    await msg.channel.send(fatos[autor]['status'])
+                    if value == 2060:
+                        fatos[autor]['status']['Sanidade'] = 50
+                        fatos[autor]['status']['Popularidade'] = 50
+                        fatos[autor]['status']['Notas'] = 50
+                        fatos[autor]['status']['Inteligência'] = 50
+                        fato_do_jogador = fatos[autor]
+                    await msg.channel.send(fato_do_jogador['status'])
                     if value != 8000:
                         if fato_do_jogador['partida'] not in range(2048, 3001):
                             fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']                    
@@ -184,7 +196,7 @@ async def on_message(msg):
                             flip = random.choice(senarios)
                         fatos[autor]['partida'] = flip
                         fato_do_jogador = fatos[autor]                                                                            
-                if fato_do_jogador['partida'] in range(0, 8):
+                if fato_do_jogador['partida'] in range(0, 16):
                     fatos[autor]['status']['Sanidade'] = 50
                     fatos[autor]['status']['Popularidade'] = 50
                     fatos[autor]['status']['Notas'] = 50
