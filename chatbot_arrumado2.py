@@ -37,7 +37,6 @@ async def on_message(msg):
         
         fato_do_jogador = fatos[autor]
         estado_do_jogador = estados[fato_do_jogador['partida']]
-        estado_anterior = fato_do_jogador['partida']
         senarios = fato_do_jogador['cenarios']
         for key, value in estado_do_jogador['positivo_proximos_estados'].items():
             if fullmatch(key, msg.content):            
@@ -60,35 +59,27 @@ async def on_message(msg):
                     fatos[autor]['status']['Inteligência'] = fato_do_jogador['status']['Inteligência'] + int(estado_do_jogador['positivos_inteligência'])
                 fato_do_jogador = fatos[autor]
                 if fato_do_jogador['status']['Sanidade'] <= 0:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 0
                     fato_do_jogador = fatos[autor]               
                 elif fato_do_jogador['status']['Sanidade'] >= 100:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 1
                     fato_do_jogador = fatos[autor]              
                 elif fato_do_jogador['status']['Popularidade'] <= 0:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 2
                     fato_do_jogador = fatos[autor]               
                 elif fato_do_jogador['status']['Popularidade'] >= 100:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 3
                     fato_do_jogador = fatos[autor]               
                 elif fato_do_jogador['status']['Notas'] <= 0:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 4
                     fato_do_jogador = fatos[autor]                
                 elif fato_do_jogador['status']['Notas'] >= 100:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 5
                     fato_do_jogador = fatos[autor]                
                 elif fato_do_jogador['status']['Inteligência'] <= 0:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 6
                     fato_do_jogador = fatos[autor]               
                 elif fato_do_jogador['status']['Inteligência'] >= 100:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 7
                     fato_do_jogador = fatos[autor]
                 if fato_do_jogador['status']['Inteligência'] in range(1, 100) and fato_do_jogador['status']['Notas'] in range(1, 100) and fato_do_jogador['status']['Popularidade'] in range(1, 100) and fato_do_jogador['status']['Sanidade'] in range(1, 100):
@@ -99,15 +90,10 @@ async def on_message(msg):
                         fatos[autor]['status']['Inteligência'] = 50
                         fato_do_jogador = fatos[autor]
                     await msg.channel.send(fato_do_jogador['status'])
-                    if value != 8000:
-                        if fato_do_jogador['partida'] not in range(2048, 3001):
-                            fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']                    
+                    if value != 8000:                   
                         fatos[autor]['partida'] = value
                         fato_do_jogador = fatos[autor]
                     else:
-                        if estado_anterior not in range(2048, 3001) and estado_anterior not in range(0, 16):
-                            fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
-                            fato_do_jogador = fatos[autor]
                         aaaa = 0
                         if fato_do_jogador['estado_anterior_aleatorio'] in senarios:
                             senarios.remove(fato_do_jogador['estado_anterior_aleatorio'])
@@ -116,6 +102,7 @@ async def on_message(msg):
                         if aaaa == 1:
                             senarios.append(fato_do_jogador['estado_anterior_aleatorio'])
                         fatos[autor]['partida'] = flip
+                        fatos[autor]['estado_anterior_aleatorio'] = flip
                         fato_do_jogador = fatos[autor]                                                                            
                 if fato_do_jogador['partida'] in range(0, 16):
                     fatos[autor]['status']['Sanidade'] = 50
@@ -147,35 +134,27 @@ async def on_message(msg):
                     fatos[autor]['status']['Inteligência'] = fato_do_jogador['status']['Inteligência'] + int(estado_do_jogador['negativos_inteligência'])
                 fato_do_jogador = fatos[autor]
                 if fato_do_jogador['status']['Sanidade'] <= 0:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 0
                     fato_do_jogador = fatos[autor]               
                 elif fato_do_jogador['status']['Sanidade'] >= 100:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 1
                     fato_do_jogador = fatos[autor]              
                 elif fato_do_jogador['status']['Popularidade'] <= 0:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 2
                     fato_do_jogador = fatos[autor]               
                 elif fato_do_jogador['status']['Popularidade'] >= 100:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 3
                     fato_do_jogador = fatos[autor]               
                 elif fato_do_jogador['status']['Notas'] <= 0:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 4
                     fato_do_jogador = fatos[autor]                
                 elif fato_do_jogador['status']['Notas'] >= 100:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 5
                     fato_do_jogador = fatos[autor]                
                 elif fato_do_jogador['status']['Inteligência'] <= 0:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 6
                     fato_do_jogador = fatos[autor]               
                 elif fato_do_jogador['status']['Inteligência'] >= 100:
-                    fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
                     fatos[autor]['partida'] = 7
                     fato_do_jogador = fatos[autor]
                 if fato_do_jogador['status']['Inteligência'] in range(1, 100) and fato_do_jogador['status']['Notas'] in range(1, 100) and fato_do_jogador['status']['Popularidade'] in range(1, 100) and fato_do_jogador['status']['Sanidade'] in range(1, 100):
@@ -187,14 +166,9 @@ async def on_message(msg):
                         fato_do_jogador = fatos[autor]
                     await msg.channel.send(fato_do_jogador['status'])
                     if value != 8000:
-                        if fato_do_jogador['partida'] not in range(2048, 3001):
-                            fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']                    
                         fatos[autor]['partida'] = value
                         fato_do_jogador = fatos[autor]
                     else:
-                        if estado_anterior not in range(2048, 3001) and estado_anterior not in range(0, 16):
-                            fatos[autor]['estado_anterior_aleatorio'] = fato_do_jogador['partida']
-                            fato_do_jogador = fatos[autor]
                         aaaa = 0
                         if fato_do_jogador['estado_anterior_aleatorio'] in senarios:
                             senarios.remove(fato_do_jogador['estado_anterior_aleatorio'])
@@ -203,6 +177,7 @@ async def on_message(msg):
                         if aaaa == 1:
                             senarios.append(fato_do_jogador['estado_anterior_aleatorio'])
                         fatos[autor]['partida'] = flip
+                        fatos[autor]['estado_anterior_aleatorio'] = flip
                         fato_do_jogador = fatos[autor]                                                                            
                 if fato_do_jogador['partida'] in range(0, 16):
                     fatos[autor]['status']['Sanidade'] = 50

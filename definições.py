@@ -177,7 +177,7 @@ estados = {
         'remove_positivo': 8000,
         'remove_negativo': 8000             
     },
-    8: {
+    32: {
         'frases': ['Ricardito quer se lanche você dá? cenario8'],
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
@@ -194,13 +194,13 @@ estados = {
         'negativa_proximos_estados': {
             '\$[nN][aã]+o': 8000
         },
-        'append_positivo': 10,
+        'append_positivo': 8000,
         'append_negativo': 8000,
         'remove_positivo': 8000,
-        'remove_negativo': 10
+        'remove_negativo': 8000
         
     },
-    9: {
+    33: {
         'frases': ['Você quer participar da aula do Carlyle? cenario9'],
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
@@ -213,17 +213,17 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '\$[sS](i)+m': 8000},
+            '\$[sS](i)+m': 2048},
         'negativa_proximos_estados': {
-            '\$[nN][aã]+o': 8000
+            '\$[nN][aã]+o': 2048
         },
-        'append_positivo': 10,
+        'append_positivo': 8000,
         'append_negativo': 8000,
         'remove_positivo': 8000,
-        'remove_negativo': 10
+        'remove_negativo': 8000
         
     },
-    10: {
+    34: {
         'frases': ['cenario10'],
         'frases_positivas': 'isso não é muito legal',
         'frases_negativas': 'descisão certa, ganha respeito',
@@ -240,10 +240,10 @@ estados = {
         'negativa_proximos_estados': {
             '\$[nN][aã]+o': 8000
         },
-        'append_positivo': 10,
+        'append_positivo': 8000,
         'append_negativo': 8000,
         'remove_positivo': 8000,
-        'remove_negativo': 10
+        'remove_negativo': 8000
         
     },
     2048: {
@@ -259,9 +259,9 @@ estados = {
         'negativos_notas': 0,
         'negativos_inteligência': 0,
         'positivo_proximos_estados': {
-            '\$[sS](i)+m': 7},
+            '\$[sS](i)+m': 8000},
         'negativa_proximos_estados': {
-            '\$[nN][aã]+o': 2
+            '\$[nN][aã]+o': 8000
         },
         'append_positivo': 8000,
         'append_negativo': 8000,
@@ -340,6 +340,7 @@ estados = {
 partidas = {}
 status_dos_jogadores = {}
 cenarios_dos_jogadores = {}
+fatos = {}
 
 #reservar 0-15 para derrotas
 #reservar 16-31 (quanto prescisar)
