@@ -1,4 +1,4 @@
-#versão onde ele não escolhe o mesmo cenario após a morte
+#versão onde ele não escolhe o mesmo cenario após a morte (de verdade dessa vez)
 from definições_avançado2 import estados, fatos
 import discord
 from discord.ext import commands
@@ -98,13 +98,10 @@ async def on_message(msg):
                     fatos[autor]['partida'] = value
                     fato_do_jogador = fatos[autor]
                 else:
-                    aaaa = 0
-                    if fato_do_jogador['estado_anterior_aleatorio'] in senarios:
-                        senarios.remove(fato_do_jogador['estado_anterior_aleatorio'])
-                        aaaa = 1
-                    flip = random.choice(senarios)
-                    if aaaa == 1:
-                        senarios.append(fato_do_jogador['estado_anterior_aleatorio'])
+                    copia = senarios.copy()
+                    if fato_do_jogador['estado_anterior_aleatorio'] in copia:
+                        copia.remove(fato_do_jogador['estado_anterior_aleatorio'])
+                    flip = random.choice(copia)
                     fatos[autor]['partida'] = flip
                     fatos[autor]['estado_anterior_aleatorio'] = flip
                     fato_do_jogador = fatos[autor]                                                                            
@@ -173,13 +170,10 @@ async def on_message(msg):
                     fatos[autor]['partida'] = value
                     fato_do_jogador = fatos[autor]
                 else:
-                    aaaa = 0
-                    if fato_do_jogador['estado_anterior_aleatorio'] in senarios:
-                        senarios.remove(fato_do_jogador['estado_anterior_aleatorio'])
-                        aaaa = 1
-                    flip = random.choice(senarios)
-                    if aaaa == 1:
-                        senarios.append(fato_do_jogador['estado_anterior_aleatorio'])
+                    copia = senarios.copy()
+                    if fato_do_jogador['estado_anterior_aleatorio'] in copia:
+                        copia.remove(fato_do_jogador['estado_anterior_aleatorio'])
+                    flip = random.choice(copia)
                     fatos[autor]['partida'] = flip
                     fatos[autor]['estado_anterior_aleatorio'] = flip
                     fato_do_jogador = fatos[autor]                                                                            
@@ -207,3 +201,7 @@ bot.run(getenv('DISCORD_TOKEN'))
 
 #if fato_do_jogador['cenarios'] != senarios:
 #    fatos[autor]['cenarios'] = senarios
+
+#copia = senarios[:]
+#ou
+#copia = senarios.copy()
