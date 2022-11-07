@@ -157,7 +157,7 @@ async def on_message(msg):
                 fato_do_jogador = fatos[autor]               
             elif fato_do_jogador['status']['Inteligência'] >= 100:
                 fatos[autor]['partida'] = 7
-                fato_do_jogador = fatos[autor]
+                fato_do_jogador = fatos[autor]  #linha abaixo pode ser um else?????
             if fato_do_jogador['status']['Inteligência'] in range(1, 100) and fato_do_jogador['status']['Notas'] in range(1, 100) and fato_do_jogador['status']['Popularidade'] in range(1, 100) and fato_do_jogador['status']['Sanidade'] in range(1, 100):
                 if value == 2060:
                     fatos[autor]['status']['Sanidade'] = 50
@@ -186,7 +186,23 @@ async def on_message(msg):
             estado_do_jogador = estados[fato_do_jogador['partida']]
             await msg.channel.send(choice(estado_do_jogador['frases']))
             return
-    if fato_do_jogador['partida'] >= 16 and msg.content.startswith('$socorro'):        
+    if msg.content.startswith('$jogu tchubaron'):
+        mensagem = msg.content.strip()[16:]
+        if mensagem == 'restart':
+            del fatos[autor]
+        if mensagem == 'status':
+            fatos[autor]['status']['Sanidade'] = 50
+            fatos[autor]['status']['Popularidade'] = 50
+            fatos[autor]['status']['Notas'] = 50
+            fatos[autor]['status']['Inteligência'] = 50
+        if mensagem == 'morte':
+            fatos[autor]['status']['Sanidade'] = 1
+            fatos[autor]['status']['Popularidade'] = 1
+            fatos[autor]['status']['Notas'] = 1
+            fatos[autor]['status']['Inteligência'] = 1
+        if int(mensagem) in estados:
+            fatos[autor]['partida'] = int(mensagem)
+    elif fato_do_jogador['partida'] >= 16 and msg.content.startswith('$socorro'):        
         await msg.channel.send(fato_do_jogador['status'])
         await msg.channel.send(choice(estado_do_jogador['frases']))
         return

@@ -1,5 +1,13 @@
 from random import choice
 import random
+from definições_avançado2 import estados, fatos
+
+
+
+if 5 in estados:
+    print('deu certo')
+
+
 
 fatos = {
             'partida': 2050,
