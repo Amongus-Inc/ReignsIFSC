@@ -47,12 +47,10 @@ async def on_message(msg):
             await msg.channel.send(estado_do_jogador['frases_positivas'])                
             appender_positivo = estado_do_jogador['append_positivo']
             remover_positivo = estado_do_jogador['remove_positivo']
-            if appender_positivo != 8000:
-                if appender_positivo not in senarios:
-                    senarios.append(appender_positivo)
-            if remover_positivo != 8000:
-                if remover_positivo in senarios:
-                    senarios.remove(remover_positivo)
+            if appender_positivo != 8000 and appender_positivo not in senarios and appender_positivo in estados:
+                senarios.append(appender_positivo)
+            if remover_positivo != 8000 and remover_positivo in senarios: #and remover_positivo in estados(?)
+                senarios.remove(remover_positivo)
             if estado_do_jogador['positivos_sanidade'] != 0:
                 fatos[autor]['status']['Sanidade'] = fato_do_jogador['status']['Sanidade'] + int(estado_do_jogador['positivos_sanidade'])
             if estado_do_jogador['positivos_popularidade'] != 0:
@@ -119,12 +117,10 @@ async def on_message(msg):
             await msg.channel.send(estado_do_jogador['frases_negativas'])
             appender_negativo = estado_do_jogador['append_negativo']
             remover_negativo = estado_do_jogador['remove_negativo']
-            if appender_negativo != 8000:
-                if appender_negativo not in senarios:
-                    senarios.append(appender_negativo)
-            if remover_negativo != 8000:
-                if remover_negativo in senarios:
-                    senarios.remove(remover_negativo)
+            if appender_negativo != 8000 and appender_negativo not in senarios and appender_negativo in estados:
+                senarios.append(appender_negativo)
+            if remover_negativo != 8000 and remover_negativo in senarios: #and remover_negativo in estados(?)
+                senarios.remove(remover_negativo)
             if estado_do_jogador['negativos_sanidade'] != 0:
                 fatos[autor]['status']['Sanidade'] = fato_do_jogador['status']['Sanidade'] + int(estado_do_jogador['negativos_sanidade'])
             if estado_do_jogador['negativos_popularidade'] != 0:
@@ -190,18 +186,48 @@ async def on_message(msg):
         mensagem = msg.content.strip()[16:]
         if mensagem == 'restart':
             del fatos[autor]
+            return
         if mensagem == 'status':
             fatos[autor]['status']['Sanidade'] = 50
             fatos[autor]['status']['Popularidade'] = 50
             fatos[autor]['status']['Notas'] = 50
             fatos[autor]['status']['Inteligência'] = 50
+            return
         if mensagem == 'morte':
             fatos[autor]['status']['Sanidade'] = 1
             fatos[autor]['status']['Popularidade'] = 1
             fatos[autor]['status']['Notas'] = 1
             fatos[autor]['status']['Inteligência'] = 1
+            return
+        if mensagem.startswith('Sanidade'):
+            mensagem = msg.content.strip()[25:]
+            fatos[autor]['status']['Sanidade'] = int(mensagem)
+            return
+        if mensagem.startswith('Popularidade'):
+            mensagem = msg.content.strip()[29:]
+            fatos[autor]['status']['Popularidade'] = int(mensagem)
+            return
+        if mensagem.startswith('Notas'):
+            mensagem = msg.content.strip()[22:]
+            fatos[autor]['status']['Notas'] = int(mensagem)
+            return
+        if mensagem.startswith('Inteligência'):
+            mensagem = msg.content.strip()[29:]
+            fatos[autor]['status']['Inteligência'] = int(mensagem)
+            return
+        if mensagem.startswith('appender'):
+            mensagem = msg.content.strip()[25:]
+            if int(mensagem) not in senarios and int(mensagem) in estados:
+                senarios.append(int(mensagem))
+            return
+        if mensagem.startswith('remover'):
+            mensagem = msg.content.strip()[24:]
+            if int(mensagem) in senarios: #and int(mensagem) in estados(?)
+                senarios.remove(int(mensagem))
+            return
         if int(mensagem) in estados:
             fatos[autor]['partida'] = int(mensagem)
+            return
     elif fato_do_jogador['partida'] >= 16 and msg.content.startswith('$socorro'):        
         await msg.channel.send(fato_do_jogador['status'])
         await msg.channel.send(choice(estado_do_jogador['frases']))
