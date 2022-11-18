@@ -6,6 +6,7 @@ from random import choice
 import random
 from re import fullmatch
 from os import getenv
+from os.path import exists
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -38,10 +39,32 @@ async def on_message(msg):
             'cenarios': [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49],
             'estado_anterior_aleatorio': 9000
         }
+
+    if msg.channel.type.name == 'private':
+        await msg.channel.send('Não é possível reproduzir áudio em canais privados.')
+        await msg.channel.send('Por favor, esteja em um canal de voz para ter a imersão completa do jogo.')
+        fatos[autor]['canal_de_voz'] = None
+        return
     
+    if msg.content.startswith('$disconecta'):        
+        if msg.guild.me in msg.author.voice.channel.members:
+            fatos[autor]['canal_de_voz'] = await msg.author.voice.channel.disconnect()
+        return
+
+    if msg.channel.type.name != 'private':
+        if msg.author.voice:
+            if msg.guild.me not in msg.author.voice.channel.members:
+                fatos[autor]['canal_de_voz'] = await msg.author.voice.channel.connect()
+            canal_de_voz = fatos[autor]['canal_de_voz']
+        else:
+            await msg.channel.send('Por favor, esteja em um canal de voz para ter a imersão completa do jogo.')
+            return
+    
+
     fato_do_jogador = fatos[autor]
     estado_do_jogador = estados[fato_do_jogador['partida']]
     senarios = fato_do_jogador['cenarios']
+    
     for key, value in estado_do_jogador['positivo_proximos_estados'].items():
         if fullmatch(key, msg.content):            
             await msg.channel.send(estado_do_jogador['frases_positivas'])                
@@ -111,6 +134,11 @@ async def on_message(msg):
                 fato_do_jogador = fatos[autor]
             estado_do_jogador = estados[fato_do_jogador['partida']]
             await msg.channel.send(choice(estado_do_jogador['frases']))
+            if msg.channel.type.name != 'private':
+                arquivo_de_som = str(fato_do_jogador['partida']) + '.mp3'
+                if exists(arquivo_de_som):
+                    som_opus = await discord.FFmpegOpusAudio.from_probe(arquivo_de_som)
+                    canal_de_voz.play(som_opus)
             return
     for key, value in estado_do_jogador['negativa_proximos_estados'].items():
         if fullmatch(key, msg.content):            
@@ -181,6 +209,11 @@ async def on_message(msg):
                 fato_do_jogador = fatos[autor]
             estado_do_jogador = estados[fato_do_jogador['partida']]
             await msg.channel.send(choice(estado_do_jogador['frases']))
+            if msg.channel.type.name != 'private':
+                arquivo_de_som = str(fato_do_jogador['partida']) + '.mp3'
+                if exists(arquivo_de_som):
+                    som_opus = await discord.FFmpegOpusAudio.from_probe(arquivo_de_som)
+                    canal_de_voz.play(som_opus)
             return
     if msg.content.startswith('$jogu tchubaron'):
         mensagem = msg.content.strip()[16:]
