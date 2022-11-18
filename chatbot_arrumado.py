@@ -45,12 +45,12 @@ async def on_message(msg):
         await msg.channel.send('Por favor, esteja em um canal de voz para ter a imersão completa do jogo.')
         fatos[autor]['canal_de_voz'] = None
         return
-    
-    if msg.content.startswith('$disconecta'):        
+#lembrete o bot tem problemas se ele já estiver no mesmo canal de voz quando vc iniciar ele
+    if msg.content.startswith('$desconecta'):    
         if msg.guild.me in msg.author.voice.channel.members:
-            fatos[autor]['canal_de_voz'] = await msg.author.voice.channel.disconnect()
+            voice_client = msg.guild.voice_client
+            await voice_client.disconnect()
         return
-
     if msg.channel.type.name != 'private':
         if msg.author.voice:
             if msg.guild.me not in msg.author.voice.channel.members:
