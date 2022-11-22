@@ -902,8 +902,7 @@ estados = {
     } 
 }
 
-# Dicionário com os estados correntes de cada jogador.
-fatos = {}
+canais_de_voz = {}
 
 #reservar 0-15 para derrotas
 #reservar 16-31 (quanto prescisar)
