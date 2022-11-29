@@ -253,14 +253,11 @@ async def on_message(msg):
                     canais_de_voz[autor].play(som_opus)
             return
     #if partida['partida'] >= 16 and msg.content.startswith('$socorro'):        
-        #await msg.channel.send(fato_do_jogador['status'])
-        #await msg.channel.send(choice(estado_do_jogador['frases']))
+        #await msg.channel.send('[Sanidade: ' + str(Sanidade) + ' Popularidade: ' + str(Popularidade) + ' Notas: ' + str(Notas) + ' Inteligência: ' + str(Inteligência) + ']')
+        #await msg.channel.send(choice(estados[partida['partida']]['frases']))
         #return
     #elif partida['partida'] >= 16 and msg.content.startswith('$'):
         #await msg.channel.send('Digite \$socorro para receber ajuda')
-        #return
-    #elif partida['partida'] < 16 and msg.content.startswith('$'):
-        #await msg.channel.send('Digite \$o que para proceguir após uma morte, assim como no jogo original de Reigns')
         #return
 
 bot.run(getenv('DISCORD_TOKEN'))
