@@ -2,7 +2,7 @@
 # As opções dos jogadores são definidas como expressões regulares.
 estados = {
     0: {
-        'frases': ['Columbine.\n $1=O que... \n $2=O que...'],
+        'frases': ['Columbine. \n $1=O que... \n $2=O que...'],
         'frases_positivas': 'recomeçando jogo',
         'frases_negativas': 'recomeçando jogo',
         'positivos_sanidade': 0, 
@@ -24,7 +24,7 @@ estados = {
         'remove_negativo': 8000           
     },
     1: {
-        'frases': ['Você atingiu o nível máximo de sanidade e percebe que o ifsc não vale a pena e transcende para além de seu corpo físico.\n $1=O que... \n $2=O que...'],
+        'frases': ['Você atingiu o nível máximo de sanidade e percebe que o ifsc não vale a pena e transcende para além de seu corpo físico. \n $1=O que... \n $2=O que...'],
         'frases_positivas': 'recomeçando jogo',
         'frases_negativas': 'recomeçando jogo',
         'positivos_sanidade': 0, 
@@ -46,7 +46,7 @@ estados = {
         'remove_negativo': 8000             
     },
     2: {
-        'frases': ['Sua popularidade é tão baixa que você é isolado, entra em depressão e se mata.\n $1=O que... \n $2=O que...'],
+        'frases': ['Sua popularidade é tão baixa que você é isolado, entra em depressão e se mata. \n $1=O que... \n $2=O que...'],
         'frases_positivas': 'recomeçando jogo',
         'frases_negativas': 'recomeçando jogo',
         'positivos_sanidade': 0, 
@@ -68,7 +68,7 @@ estados = {
         'remove_negativo': 8000             
     },
     3: {
-        'frases': ['Você é tão popular que começa a se relacionar com uma galera da pesada, cai na pilha errada, logo drogas, logo cadeia.\n $1=O que... \n $2=O que...'],
+        'frases': ['Você é tão popular que começa a se relacionar com uma galera da pesada, cai na pilha errada, logo drogas, logo cadeia. \n $1=O que... \n $2=O que...'],
         'frases_positivas': 'recomeçando jogo',
         'frases_negativas': 'recomeçando jogo',
         'positivos_sanidade': 0, 
@@ -90,7 +90,7 @@ estados = {
         'remove_negativo': 8000             
     },
     4: {
-        'frases': ['Repete de ano na primeira fase, eterno mono.\n $1=O que... \n $2=O que...'],
+        'frases': ['Repete de ano na primeira fase, eterno mono. \n $1=O que... \n $2=O que...'],
         'frases_positivas': 'recomeçando jogo',
         'frases_negativas': 'recomeçando jogo',
         'positivos_sanidade': 0, 
@@ -112,7 +112,7 @@ estados = {
         'remove_negativo': 8000             
     },
     5: {
-        'frases': ['Suas notas são tão altas que começam a achar que você está colando e você é expulso.\n $1=O que... \n $2=O que...'],
+        'frases': ['Suas notas são tão altas que começam a achar que você está colando e você é expulso. \n $1=O que... \n $2=O que...'],
         'frases_positivas': 'recomeçando jogo',
         'frases_negativas': 'recomeçando jogo',
         'positivos_sanidade': 0, 
@@ -134,7 +134,7 @@ estados = {
         'remove_negativo': 8000             
     },
     6: {
-        'frases': ['Em um momento de burrice, você decide subir no telhado do ifsc durante um temporal com um fio desencapado para captar sinais AM, é acertado por um raio e morre.\n $1=O que... \n $2=O que...'],
+        'frases': ['Em um momento de burrice, você decide subir no telhado do ifsc durante um temporal com um fio desencapado para captar sinais AM, é acertado por um raio e morre. \n $1=O que... \n $2=O que...'],
         'frases_positivas': 'recomeçando jogo',
         'frases_negativas': 'recomeçando jogo',
         'positivos_sanidade': 0, 
@@ -156,7 +156,7 @@ estados = {
         'remove_negativo': 8000             
     },
     7: {
-        'frases': ['No ápice de sua inteligencia, você constrói uma cadeira telefone tão avançada que ela se torna um foguete e te leva para o espaço.\n $1=O que... \n $2=O que...'],
+        'frases': ['No ápice de sua inteligencia, você constrói uma cadeira telefone tão avançada que ela se torna um foguete e te leva para o espaço. \n $1=O que... \n $2=O que...'],
         'frases_positivas': 'recomeçando jogo',
         'frases_negativas': 'recomeçando jogo',
         'positivos_sanidade': 0, 
@@ -178,7 +178,7 @@ estados = {
         'remove_negativo': 8000             
     },
     8: {
-        'frases': ['Você se estica para tentar alcançar o objeto e escorrega, caindo no esgoto e se afoga.\n $1=O que... \n $2=O que...'],
+        'frases': ['Você se estica para tentar alcançar o objeto e escorrega, caindo no esgoto e se afoga. \n $1=O que... \n $2=O que...'],
         'frases_positivas': 'recomeçando jogo',
         'frases_negativas': 'recomeçando jogo',
         'positivos_sanidade': 0, 

@@ -54,7 +54,7 @@ async def on_message(msg):
         return
 
     if partidas_db.count_documents({'jogador': autor}) == 0:
-        partidas_db.insert_one({'jogador': autor, 'partida': 2050, 'status': {'Sanidade': 1, 'Popularidade': 1, 'Notas': 1, 'Inteligência': 1}, 'cenarios': [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49], 'estado_anterior_aleatorio': 9000})
+        partidas_db.insert_one({'jogador': autor, 'partida': 2050, 'status': {'Sanidade': 50, 'Popularidade': 50, 'Notas': 50, 'Inteligência': 50}, 'cenarios': [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49], 'estado_anterior_aleatorio': 9000})
     
     partida = partidas_db.find_one({'jogador': autor})
 
