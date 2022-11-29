@@ -73,21 +73,20 @@ async def on_message(msg):
 
     estado_do_jogador = estados[partida['partida']]
     senarios = partida['cenarios']
-    
+    anterior = 8000
+    Sanidade = partida['status']['Sanidade']
+    Popularidade = partida['status']['Popularidade']
+    Notas = partida['status']['Notas']
+    Inteligência = partida['status']['Inteligência']
     for key, value in estado_do_jogador['positivo_proximos_estados'].items():
         if fullmatch(key, msg.content):            
             await msg.channel.send(estado_do_jogador['frases_positivas'])                
-            appender_positivo = estado_do_jogador['append_positivo']
-            remover_positivo = estado_do_jogador['remove_positivo']
-            if appender_positivo != 8000 and appender_positivo not in senarios and appender_positivo in estados:
-                senarios.append(appender_positivo)
-            if remover_positivo != 8000 and remover_positivo in senarios: #and remover_positivo in estados(?)
-                senarios.remove(remover_positivo)
-            anterior = 8000
-            Sanidade = partida['status']['Sanidade']
-            Popularidade = partida['status']['Popularidade']
-            Notas = partida['status']['Notas']
-            Inteligência = partida['status']['Inteligência']
+            appender = estado_do_jogador['append_positivo']
+            remover = estado_do_jogador['remove_positivo']
+            if appender != 8000 and appender not in senarios and appender in estados:
+                senarios.append(appender)
+            if remover != 8000 and remover in senarios: #and remover_positivo in estados(?)
+                senarios.remove(remover)
             if estado_do_jogador['positivos_sanidade'] != 0:
                 Sanidade = partida['status']['Sanidade'] + int(estado_do_jogador['positivos_sanidade'])
             if estado_do_jogador['positivos_popularidade'] != 0:
@@ -134,7 +133,7 @@ async def on_message(msg):
                 Notas = 50
                 Inteligência = 50
             if anterior != 8000:
-                if appender_positivo != 8000 or remover_positivo != 8000:
+                if appender != 8000 or remover != 8000:
                     partida = partidas_db.find_one_and_update(
                         {'jogador': autor},
                         {'$set': {'partida': numero, 'status': {'Sanidade': Sanidade, 'Popularidade': Popularidade, 'Notas': Notas, 'Inteligência': Inteligência}, 'cenarios': senarios, 'estado_anterior_aleatorio': anterior}},
@@ -147,7 +146,7 @@ async def on_message(msg):
                         return_document=pymongo.ReturnDocument.AFTER
                     )
             else:
-                if appender_positivo != 8000 or remover_positivo != 8000:
+                if appender != 8000 or remover != 8000:
                     partida = partidas_db.find_one_and_update(
                         {'jogador': autor},
                         {'$set': {'partida': numero, 'status': {'Sanidade': Sanidade, 'Popularidade': Popularidade, 'Notas': Notas, 'Inteligência': Inteligência}, 'cenarios': senarios}},
@@ -169,17 +168,12 @@ async def on_message(msg):
     for key, value in estado_do_jogador['negativa_proximos_estados'].items():
         if fullmatch(key, msg.content):            
             await msg.channel.send(estado_do_jogador['frases_negativas'])
-            appender_negativo = estado_do_jogador['append_negativo']
-            remover_negativo = estado_do_jogador['remove_negativo']
-            if appender_negativo != 8000 and appender_negativo not in senarios and appender_negativo in estados:
-                senarios.append(appender_negativo)
-            if remover_negativo != 8000 and remover_negativo in senarios: #and remover_negativo in estados(?)
-                senarios.remove(remover_negativo)
-            anterior = 8000
-            Sanidade = partida['status']['Sanidade']
-            Popularidade = partida['status']['Popularidade']
-            Notas = partida['status']['Notas']
-            Inteligência = partida['status']['Inteligência']
+            appender = estado_do_jogador['append_negativo']
+            remover = estado_do_jogador['remove_negativo']
+            if appender != 8000 and appender not in senarios and appender in estados:
+                senarios.append(appender)
+            if remover != 8000 and remover in senarios: #and remover_negativo in estados(?)
+                senarios.remove(remover)
             if estado_do_jogador['negativos_sanidade'] != 0:
                 Sanidade = partida['status']['Sanidade'] + int(estado_do_jogador['negativos_sanidade'])
             if estado_do_jogador['negativos_popularidade'] != 0:
@@ -226,7 +220,7 @@ async def on_message(msg):
                 Notas = 50
                 Inteligência = 50
             if anterior != 8000:
-                if appender_positivo != 8000 or remover_positivo != 8000:
+                if appender != 8000 or remover != 8000:
                     partida = partidas_db.find_one_and_update(
                         {'jogador': autor},
                         {'$set': {'partida': numero, 'status': {'Sanidade': Sanidade, 'Popularidade': Popularidade, 'Notas': Notas, 'Inteligência': Inteligência}, 'cenarios': senarios, 'estado_anterior_aleatorio': anterior}},
@@ -239,7 +233,7 @@ async def on_message(msg):
                         return_document=pymongo.ReturnDocument.AFTER
                     )
             else:
-                if appender_negativo != 8000 or remover_negativo != 8000:
+                if appender != 8000 or remover != 8000:
                     partida = partidas_db.find_one_and_update(
                         {'jogador': autor},
                         {'$set': {'partida': numero, 'status': {'Sanidade': Sanidade, 'Popularidade': Popularidade, 'Notas': Notas, 'Inteligência': Inteligência}, 'cenarios': senarios}},
