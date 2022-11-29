@@ -60,8 +60,7 @@ async def on_message(msg):
 
     if msg.channel.type.name == 'private':
         if partida['partida'] == 2050:
-            await msg.channel.send('Não é possível reproduzir áudio em canais privados.')
-            await msg.channel.send('Por favor, esteja em um canal de voz para ter a imersão completa do jogo.')
+            await msg.channel.send('Não é possível reproduzir áudio em canais privados. \n Por favor, esteja em um canal de voz para ter a imersão completa do jogo.')
 
     if msg.channel.type.name != 'private':
         if msg.author.voice:
@@ -117,7 +116,7 @@ async def on_message(msg):
                     Popularidade = 50
                     Notas = 50
                     Inteligência = 50
-                await msg.channel.send('[Sanidade: ' + str(Sanidade) + ' Popularidade: ' + str(Popularidade) + ' Notas: ' + str(Notas) + ' Inteligência: ' + str(Inteligência) + ']')
+                await msg.channel.send('[Sanidade: ' + str(Sanidade) + ', Popularidade: ' + str(Popularidade) + ', Notas: ' + str(Notas) + ', Inteligência: ' + str(Inteligência) + ']')
                 if value != 8000:                   
                     numero = value
                 else:
@@ -204,7 +203,7 @@ async def on_message(msg):
                     Popularidade = 50
                     Notas = 50
                     Inteligência = 50
-                await msg.channel.send('[Sanidade: ' + str(Sanidade) + ' Popularidade: ' + str(Popularidade) + ' Notas: ' + str(Notas) + ' Inteligência: ' + str(Inteligência) + ']')
+                await msg.channel.send('[Sanidade: ' + str(Sanidade) + ', Popularidade: ' + str(Popularidade) + ', Notas: ' + str(Notas) + ', Inteligência: ' + str(Inteligência) + ']')
                 if value != 8000:                   
                     numero = value
                 else:
@@ -252,13 +251,12 @@ async def on_message(msg):
                     som_opus = await discord.FFmpegOpusAudio.from_probe(arquivo_de_som)
                     canais_de_voz[autor].play(som_opus)
             return
-    #if partida['partida'] >= 16 and msg.content.startswith('$socorro'):        
-        #await msg.channel.send('[Sanidade: ' + str(Sanidade) + ' Popularidade: ' + str(Popularidade) + ' Notas: ' + str(Notas) + ' Inteligência: ' + str(Inteligência) + ']')
-        #await msg.channel.send(choice(estados[partida['partida']]['frases']))
-        #return
-    #elif partida['partida'] >= 16 and msg.content.startswith('$'):
-        #await msg.channel.send('Digite \$socorro para receber ajuda')
-        #return
+    if partida['partida'] >= 16 and msg.content.startswith('$socorro'):        
+        await msg.channel.send('[Sanidade: ' + str(Sanidade) + ', Popularidade: ' + str(Popularidade) + ', Notas: ' + str(Notas) + ', Inteligência: ' + str(Inteligência) + '] \n' + choice(estados[partida['partida']]['frases']))
+        return
+    elif partida['partida'] >= 16 and msg.content.startswith('$'):
+        await msg.channel.send('Digite \$socorro para receber ajuda')
+        return
 
 bot.run(getenv('DISCORD_TOKEN'))
 
