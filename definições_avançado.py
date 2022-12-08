@@ -199,7 +199,30 @@ estados = {
         'remove_positivo': 8000,
         'remove_negativo': 8000
         
-    },    
+    },
+    9: {
+        'frases': ['Meus parabéns você ganhou o jogo. \n $1=Para reiniciar \n $2=Para reiniciar'],
+        'frases_positivas': 'recomeçando jogo',
+        'frases_negativas': 'recomeçando jogo',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 8000},
+        'negativa_proximos_estados': {
+            '\$2': 8000
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 8000,
+        'remove_negativo': 8000
+        
+    },   
     32: {
         'frases': ['Um buraco foi aberto para reformas no esgoto do ifsc, no fundo você vê algo brilhante. Quer pegar? \n $1=Sim \n $2=Não'],
         'frases_positivas': '_',
@@ -614,6 +637,75 @@ estados = {
         'remove_negativo': 8000
         
     },
+    1048: {
+        'frases': ['Na matéria de física o projeto do semestre é a construção de um foguete. Você pode...\n $1=...estudar física para seu foguete performar o melhor possível \n $2=...fazer de qualquer jeito'],
+        'frases_positivas': 'Seu foguete ganha a competição, te garantindo a maior nota.',
+        'frases_negativas': 'Seu foguete voa 2 metros para frente, acerta a janela da orientação de turno e explode. Todos dão risada e você vira o novo Albert Einstein.',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 8000},
+        'negativa_proximos_estados': {
+            '\$2': 8000
+        },
+        'append_positivo': 1049,
+        'append_negativo': 1049,
+        'remove_positivo': 1048,
+        'remove_negativo': 1048
+        
+    },
+    1049: {
+        'frases': ['Ambas as primeiras fases se reúnem para discutir o tema do projeto integrador. Ao longo da reunião, são sugeridos diversos temas xonxos e capengas. Para salvar o projeto, você decide sugerir o tema de "rinhas de galos robôs". A votação para decidir o tema começa, você...\n $1=...vota somente uma vez no seu tema, honestamente \n $2=...vota múltiplas vezes no seu tema, indo contra as regras impostas da reunião'],
+        'frases_positivas': 'Seu tema ganha poucos votos, e você é obrigado a fazer um projeto sobre "diferenças entre sociopatia e psicopatia"',
+        'frases_negativas': 'Seu tema termina a votação em primeiro, e uma parte da outra turma te odeia.',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 8000},
+        'negativa_proximos_estados': {
+            '\$2': 8000
+        },
+        'append_positivo': 1050,
+        'append_negativo': 1050,
+        'remove_positivo': 1049,
+        'remove_negativo': 1049
+        
+    },
+    1050: {
+        'frases': ['Meus parabéns, você conseguiu!!!!\n Ao sair da sala no ultimo dia de aula do semestre você é abordado por um veterano do IFSC e ele diz: "Tu que acabou de terminar a primeira fase?". Você confirma, ele da uma risada sarcástica e continua "Isso é só o começo. Boa sorte. VOCÊ VAI PRECISAR"\n $1=O que... \n $2=O que...'],
+        'frases_positivas': '_',
+        'frases_negativas': '_',
+        'positivos_sanidade': 0, 
+        'positivos_popularidade': 0,
+        'positivos_notas': 0,
+        'positivos_inteligência': 0,
+        'negativos_sanidade': 0, 
+        'negativos_popularidade': 0,
+        'negativos_notas': 0,
+        'negativos_inteligência': 0,
+        'positivo_proximos_estados': {
+            '\$1': 9},
+        'negativa_proximos_estados': {
+            '\$2': 9
+        },
+        'append_positivo': 8000,
+        'append_negativo': 8000,
+        'remove_positivo': 1050,
+        'remove_negativo': 1050
+        
+    },
     2048: {
         'frases': ['O que? \n $1=Escreve as respostas erradas para ele copiar e no último segundo corrige. \n $2=Dedura ele.'],
         'frases_positivas': 'Ele nem percebe que você fez isso e sai feliz da sala, achando que vai conseguir tirar uma boa nota',
@@ -895,8 +987,8 @@ estados = {
         'negativa_proximos_estados': {
             '\$2': 8000
         },
-        'append_positivo': 8000,
-        'append_negativo': 8000,
+        'append_positivo': 1048,
+        'append_negativo': 1048,
         'remove_positivo': 8000,
         'remove_negativo': 8000
     } 
